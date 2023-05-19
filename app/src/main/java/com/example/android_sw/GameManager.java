@@ -61,7 +61,7 @@ public class GameManager {
     public void scrollingTube(Canvas can){
         if(gameState == 1){
 
-            if((tubeCollections.get(winningTube).getXTube() < bird.getX() + AppHolder.getBitmapControl().getBirdWidth())
+            if((tubeCollections.get(winningTube).getXtube() < bird.getX() + AppHolder.getBitmapControl().getBirdWidth())
             &&(tubeCollections.get(winningTube).getUpTubeCollection_Y() > bird.getY()
             ||tubeCollections.get(winningTube).getDownTube_Y() < bird.getY() +
                     AppHolder.getBitmapControl().getBirdHeight())){
@@ -74,7 +74,7 @@ public class GameManager {
                 ((Activity)mContext).finish();
             }
 
-            if(tubeCollections.get(winningTube).getXTube() < bird.getX() - AppHolder.getBitmapControl().getTubeWidth()){
+            if(tubeCollections.get(winningTube).getXtube() < bird.getX() - AppHolder.getBitmapControl().getTubeWidth()){
                 scoreCount ++;
                 winningTube ++;
                 AppHolder.getSoundPlay().playPing();
@@ -83,16 +83,22 @@ public class GameManager {
                 }
             }
             for(int j = 0; j < AppHolder.tube_numbers; j++){
-                if(tubeCollections.get(j).getXTube()<-AppHolder.getBitmapControl().getTubeWidth()){
-                    tubeCollections.get(j).setXTube(tubeCollections.get(j).getXTube()
+                if(tubeCollections.get(j).getXtube()<-AppHolder.getBitmapControl().getTubeWidth()){
+                    tubeCollections.get(j).setXtube(tubeCollections.get(j).getXtube()
                     +AppHolder.tube_numbers*AppHolder.tubeDistance);
                     int upTubeCollectionY = AppHolder.minimumTubeCollection_Y +
                             rand.nextInt(AppHolder.maximumTubeCollection_Y - AppHolder.minimumTubeCollection_Y+1);
                     tubeCollections.get(j).setUpTubeCollection_Y(upTubeCollectionY);
+                    tubeCollections.get(j).setColorTube();
                 }
-                tubeCollections.get(j).setXTube(tubeCollections.get(j).getXTube() - AppHolder.tubeVelocity);
-                can.drawBitmap(AppHolder.getBitmapControl().getUpTube(), tubeCollections.get(j).getXTube(), tubeCollections.get(j).getUpTube_Y(), null);
-                can.drawBitmap(AppHolder.getBitmapControl().getDownTube(), tubeCollections.get(j).getXTube(), tubeCollections.get(j).getUpTube_Y(), null);
+                tubeCollections.get(j).setXtube(tubeCollections.get(j).getXtube() - AppHolder.tubeVelocity);
+               if(tubeCollections.get(j).getColorTube() == 0){
+                   can.drawBitmap(AppHolder.getBitmapControl().getUpTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getUpTube_Y(), null);
+                   can.drawBitmap(AppHolder.getBitmapControl().getDownTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getDownTube_Y(), null);
+               }else{
+                   can.drawBitmap(AppHolder.getBitmapControl().getUpColoredTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getUpTube_Y(), null);
+                   can.drawBitmap(AppHolder.getBitmapControl().getDownColoredTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getDownTube_Y(), null);
+               }
             }
             can.drawText("" + scoreCount, 620, 400, designPaint);
         }
