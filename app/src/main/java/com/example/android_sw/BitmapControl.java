@@ -20,6 +20,7 @@ public class BitmapControl {
         upTube = BitmapFactory.decodeResource(res, R.drawable.up_tube);
         downTube = BitmapFactory.decodeResource(res, R.drawable.down_tube);
         upColoredTube = BitmapFactory.decodeResource(res,R.drawable.colored_tube_up);
+        downColoredTube = BitmapFactory.decodeResource(res,R.drawable.colored_tube_bottom);
     }
     public Bitmap getUpColoredTube(){
         return upColoredTube;
