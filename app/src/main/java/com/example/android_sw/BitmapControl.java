@@ -7,9 +7,9 @@ import android.graphics.BitmapFactory;
 public class BitmapControl {
     Bitmap background;
     Bitmap[] SwimmingChar;
-    Bitmap upTube;
-    Bitmap downTube;
-    Bitmap upColoredTube, downColoredTube;
+    Bitmap upObstacle;
+    Bitmap downObstacle;
+    Bitmap upColoredObstacle, downColoredObstacle;
     public BitmapControl(Resources res) {
         background = BitmapFactory.decodeResource(res, R.drawable.background);
         background = imageScale(background);
@@ -17,30 +17,30 @@ public class BitmapControl {
         SwimmingChar[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
         SwimmingChar[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
         SwimmingChar[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
-        upTube = BitmapFactory.decodeResource(res, R.drawable.up_tube);
-        downTube = BitmapFactory.decodeResource(res, R.drawable.down_tube);
-        upColoredTube = BitmapFactory.decodeResource(res,R.drawable.colored_tube_up);
-        downColoredTube = BitmapFactory.decodeResource(res,R.drawable.colored_tube_bottom);
+        upObstacle = BitmapFactory.decodeResource(res, R.drawable.up_tube);
+        downObstacle = BitmapFactory.decodeResource(res, R.drawable.down_tube);
+        upColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.colored_tube_up);
+        downColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.colored_tube_bottom);
     }
-    public Bitmap getUpColoredTube(){
-        return upColoredTube;
+    public Bitmap getUpColoredObstacle(){
+        return upColoredObstacle;
     }
-    public Bitmap getDownColoredTube(){
-        return downColoredTube;
+    public Bitmap getDownColoredObstacle(){
+        return downColoredObstacle;
     }
-    public Bitmap getUpTube(){
-        return upTube;
+    public Bitmap getUpObstacle(){
+        return upObstacle;
     }
-    public Bitmap getDownTube(){
-        return downTube;
+    public Bitmap getDownObstacle(){
+        return downObstacle;
     }
-    public int getTubeWidth(){
-        return upTube.getWidth();
+    public int getObstacleWidth(){
+        return upObstacle.getWidth();
     }
-    public int getTubeHeight(){
-        return upTube.getHeight();
+    public int getObstacleHeight(){
+        return upObstacle.getHeight();
     }
-    public Bitmap getBird(int frame){
+    public Bitmap getChar(int frame){
         return SwimmingChar[frame];
     }
     public int getCharWidth(){

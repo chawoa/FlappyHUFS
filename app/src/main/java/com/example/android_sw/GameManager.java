@@ -14,7 +14,7 @@ public class GameManager {
     BgImage bgImage;
     SwimmingChar swimmingChar;
     static int gameState;
-    ArrayList<TubeCollection> tubeCollections;
+    ArrayList<ObstacleCollection> obstacleCollections;
     Random rand;
     int scoreCount; //this will be used to store the score
     int winningTube; //this will used to determine the winning tube obstacle
@@ -23,7 +23,7 @@ public class GameManager {
         bgImage = new BgImage();
         swimmingChar = new SwimmingChar();
         gameState = 0;
-        tubeCollections = new ArrayList<>();
+        obstacleCollections = new ArrayList<>();
         rand = new Random();
         generateTubeObject();
         initScoreVariables();
@@ -49,21 +49,21 @@ public class GameManager {
      */
 
     public void generateTubeObject(){
-        for(int j = 0; j < AppHolder.tubeGap; j++){
-            int tubeX = AppHolder.SCRN_WIDTH_X + j*AppHolder.tubeDistance;
-            int upTubeCollectionY = AppHolder.minimumTubeCollection_Y;
-            rand.nextInt(AppHolder.maximumTubeCollection_Y - AppHolder.minimumTubeCollection_Y + 1);
-            TubeCollection tubeCollection = new TubeCollection(tubeX, upTubeCollectionY);
-            tubeCollections.add(tubeCollection);
+        for(int j = 0; j < AppHolder.obstacleGap; j++){
+            int obstacleX = AppHolder.SCRN_WIDTH_X + j*AppHolder.obstacleDistance;
+            int upObstacleCollectionY = AppHolder.minimumObstacleCollection_Y;
+            rand.nextInt(AppHolder.maximumObstacleCollection_Y - AppHolder.minimumObstacleCollection_Y + 1);
+            ObstacleCollection obstacleCollection = new ObstacleCollection(obstacleX, upObstacleCollectionY);
+            obstacleCollections.add(obstacleCollection);
         }
     }
 
     public void scrollingTube(Canvas can){
         if(gameState == 1){
 
-            if((tubeCollections.get(winningTube).getXtube() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
-            &&(tubeCollections.get(winningTube).getUpTubeCollection_Y() > swimmingChar.getY()
-            ||tubeCollections.get(winningTube).getDownTube_Y() < swimmingChar.getY() +
+            if((obstacleCollections.get(winningTube).getXObstacle() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
+            &&(obstacleCollections.get(winningTube).getUpObstacleCollection_Y() > swimmingChar.getY()
+            ||obstacleCollections.get(winningTube).getDownObstacle_Y() < swimmingChar.getY() +
                     AppHolder.getBitmapControl().getCharHeight())){
                 gameState = 2;
                 AppHolder.getSoundPlay().playCrash();
@@ -74,30 +74,30 @@ public class GameManager {
                 ((Activity)mContext).finish();
             }
 
-            if(tubeCollections.get(winningTube).getXtube() < swimmingChar.getX() - AppHolder.getBitmapControl().getTubeWidth()){
+            if(obstacleCollections.get(winningTube).getXObstacle() < swimmingChar.getX() - AppHolder.getBitmapControl().getObstacleWidth()){
                 scoreCount ++;
                 winningTube ++;
                 AppHolder.getSoundPlay().playPing();
-                if(winningTube > AppHolder.tube_numbers - 1){
+                if(winningTube > AppHolder.obstacle_numbers - 1){
                     winningTube = 0;
                 }
             }
-            for(int j = 0; j < AppHolder.tube_numbers; j++){
-                if(tubeCollections.get(j).getXtube()<-AppHolder.getBitmapControl().getTubeWidth()){
-                    tubeCollections.get(j).setXtube(tubeCollections.get(j).getXtube()
-                    +AppHolder.tube_numbers*AppHolder.tubeDistance);
-                    int upTubeCollectionY = AppHolder.minimumTubeCollection_Y +
-                            rand.nextInt(AppHolder.maximumTubeCollection_Y - AppHolder.minimumTubeCollection_Y+1);
-                    tubeCollections.get(j).setUpTubeCollection_Y(upTubeCollectionY);
-                    tubeCollections.get(j).setColorTube();
+            for(int j = 0; j < AppHolder.obstacle_numbers; j++){
+                if(obstacleCollections.get(j).getXObstacle()<-AppHolder.getBitmapControl().getObstacleWidth()){
+                    obstacleCollections.get(j).setXobstacle(obstacleCollections.get(j).getXObstacle()
+                    +AppHolder.obstacle_numbers*AppHolder.obstacleDistance);
+                    int upTubeCollectionY = AppHolder.minimumObstacleCollection_Y +
+                            rand.nextInt(AppHolder.maximumObstacleCollection_Y - AppHolder.minimumObstacleCollection_Y+1);
+                    obstacleCollections.get(j).setUpObstacleCollection_Y(upTubeCollectionY);
+                    obstacleCollections.get(j).setColorObstacle();
                 }
-                tubeCollections.get(j).setXtube(tubeCollections.get(j).getXtube() - AppHolder.tubeVelocity);
-               if(tubeCollections.get(j).getColorTube() == 0){
-                   can.drawBitmap(AppHolder.getBitmapControl().getUpTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getUpTube_Y(), null);
-                   can.drawBitmap(AppHolder.getBitmapControl().getDownTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getDownTube_Y(), null);
+                obstacleCollections.get(j).setXobstacle(obstacleCollections.get(j).getXObstacle() - AppHolder.obstacleVelocity);
+               if(obstacleCollections.get(j).getColorObstacle() == 0){
+                   can.drawBitmap(AppHolder.getBitmapControl().getUpObstacle(), obstacleCollections.get(j).getXObstacle(), obstacleCollections.get(j).getUpObstacle_Y(), null);
+                   can.drawBitmap(AppHolder.getBitmapControl().getDownObstacle(), obstacleCollections.get(j).getXObstacle(), obstacleCollections.get(j).getDownObstacle_Y(), null);
                }else{
-                   can.drawBitmap(AppHolder.getBitmapControl().getUpColoredTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getUpTube_Y(), null);
-                   can.drawBitmap(AppHolder.getBitmapControl().getDownColoredTube(), tubeCollections.get(j).getXtube(), tubeCollections.get(j).getDownTube_Y(), null);
+                   can.drawBitmap(AppHolder.getBitmapControl().getUpColoredObstacle(), obstacleCollections.get(j).getXObstacle(), obstacleCollections.get(j).getUpObstacle_Y(), null);
+                   can.drawBitmap(AppHolder.getBitmapControl().getDownColoredObstacle(), obstacleCollections.get(j).getXObstacle(), obstacleCollections.get(j).getDownObstacle_Y(), null);
                }
             }
             can.drawText("" + scoreCount, 620, 400, designPaint);
@@ -113,7 +113,7 @@ public class GameManager {
         }
 
         int currentFrame = swimmingChar.getCurrentFrame();
-        canvas.drawBitmap(AppHolder.getBitmapControl().getBird(currentFrame), swimmingChar.getX(), swimmingChar.getY(), null);
+        canvas.drawBitmap(AppHolder.getBitmapControl().getChar(currentFrame), swimmingChar.getX(), swimmingChar.getY(), null);
         currentFrame++;
         if(currentFrame > swimmingChar.maximumFrame){
             currentFrame = 0;
