@@ -30,8 +30,8 @@ public class ObstacleCollection {
     public int getDownObstacle_Y(){
         return upObstacleCollection_Y + AppHolder.obstacleGap;
     }
-    public void setXobstacle(int x_Tube){
-        this.xObstacle = x_Tube;
+    public void setXobstacle(int x_Obstacle){
+        this.xObstacle = x_Obstacle;
     }
     public void setUpObstacleCollection_Y(int upTubeCollection_Y){
         this.upObstacleCollection_Y = upTubeCollection_Y;
