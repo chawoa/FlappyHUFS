@@ -12,16 +12,16 @@ import java.util.Random;
 
 public class GameManager {
     BgImage bgImage;
-    FlyingBird bird;
+    SwimmingChar swimmingChar;
     static int gameState;
     ArrayList<TubeCollection> tubeCollections;
     Random rand;
-    int scoreCount; //this will be uesd to store the score
+    int scoreCount; //this will be used to store the score
     int winningTube; //this will used to determine the winning tube obstacle
     Paint designPaint;
     public GameManager() {
         bgImage = new BgImage();
-        bird = new FlyingBird();
+        swimmingChar = new SwimmingChar();
         gameState = 0;
         tubeCollections = new ArrayList<>();
         rand = new Random();
@@ -61,10 +61,10 @@ public class GameManager {
     public void scrollingTube(Canvas can){
         if(gameState == 1){
 
-            if((tubeCollections.get(winningTube).getXtube() < bird.getX() + AppHolder.getBitmapControl().getBirdWidth())
-            &&(tubeCollections.get(winningTube).getUpTubeCollection_Y() > bird.getY()
-            ||tubeCollections.get(winningTube).getDownTube_Y() < bird.getY() +
-                    AppHolder.getBitmapControl().getBirdHeight())){
+            if((tubeCollections.get(winningTube).getXtube() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
+            &&(tubeCollections.get(winningTube).getUpTubeCollection_Y() > swimmingChar.getY()
+            ||tubeCollections.get(winningTube).getDownTube_Y() < swimmingChar.getY() +
+                    AppHolder.getBitmapControl().getCharHeight())){
                 gameState = 2;
                 AppHolder.getSoundPlay().playCrash();
                 Context mContext = AppHolder.gameActivityContext;
@@ -74,7 +74,7 @@ public class GameManager {
                 ((Activity)mContext).finish();
             }
 
-            if(tubeCollections.get(winningTube).getXtube() < bird.getX() - AppHolder.getBitmapControl().getTubeWidth()){
+            if(tubeCollections.get(winningTube).getXtube() < swimmingChar.getX() - AppHolder.getBitmapControl().getTubeWidth()){
                 scoreCount ++;
                 winningTube ++;
                 AppHolder.getSoundPlay().playPing();
@@ -106,19 +106,19 @@ public class GameManager {
 
     public void birdAnimation(Canvas canvas){
         if(gameState == 1){
-            if(bird.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getBirdHeight()) || bird.getVelocity() < 0){
-                bird.setVelocity(bird.getVelocity() + AppHolder.gravityPull);
-                bird.setY(bird.getY() + bird.getVelocity());
+            if(swimmingChar.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getCharHeight()) || swimmingChar.getVelocity() < 0){
+                swimmingChar.setVelocity(swimmingChar.getVelocity() + AppHolder.gravityPull);
+                swimmingChar.setY(swimmingChar.getY() + swimmingChar.getVelocity());
             }
         }
 
-        int currentFrame = bird.getCurrentFrame();
-        canvas.drawBitmap(AppHolder.getBitmapControl().getBird(currentFrame), bird.getX(), bird.getY(), null);
+        int currentFrame = swimmingChar.getCurrentFrame();
+        canvas.drawBitmap(AppHolder.getBitmapControl().getBird(currentFrame), swimmingChar.getX(), swimmingChar.getY(), null);
         currentFrame++;
-        if(currentFrame > bird.maximumFrame){
+        if(currentFrame > swimmingChar.maximumFrame){
             currentFrame = 0;
         }
-        bird.setCurrentFrame(currentFrame);
+        swimmingChar.setCurrentFrame(currentFrame);
     }
 
     public void backgroundAnimation(Canvas canvas){

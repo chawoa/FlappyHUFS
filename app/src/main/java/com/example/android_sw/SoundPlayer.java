@@ -30,7 +30,7 @@ public class SoundPlayer {
             crash.start();
         }
     }
-    public void playWing(){
+    public void playArm(){
         if(jump != null){
             jump.start();
         }

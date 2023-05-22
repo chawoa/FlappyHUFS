@@ -6,17 +6,17 @@ import android.graphics.BitmapFactory;
 
 public class BitmapControl {
     Bitmap background;
-    Bitmap[] FlyingBird;
+    Bitmap[] SwimmingChar;
     Bitmap upTube;
     Bitmap downTube;
     Bitmap upColoredTube, downColoredTube;
     public BitmapControl(Resources res) {
         background = BitmapFactory.decodeResource(res, R.drawable.background);
         background = imageScale(background);
-        FlyingBird = new Bitmap[3];
-        FlyingBird[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
-        FlyingBird[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
-        FlyingBird[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
+        SwimmingChar = new Bitmap[3];
+        SwimmingChar[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
+        SwimmingChar[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
+        SwimmingChar[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
         upTube = BitmapFactory.decodeResource(res, R.drawable.up_tube);
         downTube = BitmapFactory.decodeResource(res, R.drawable.down_tube);
         upColoredTube = BitmapFactory.decodeResource(res,R.drawable.colored_tube_up);
@@ -41,13 +41,13 @@ public class BitmapControl {
         return upTube.getHeight();
     }
     public Bitmap getBird(int frame){
-        return FlyingBird[frame];
+        return SwimmingChar[frame];
     }
-    public int getBirdWidth(){
-        return FlyingBird[0].getWidth();
+    public int getCharWidth(){
+        return SwimmingChar[0].getWidth();
     }
-    public int getBirdHeight(){
-        return FlyingBird[0].getHeight();
+    public int getCharHeight(){
+        return SwimmingChar[0].getHeight();
     }
     public Bitmap getBackground(){
         return background;

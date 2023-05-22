@@ -47,10 +47,10 @@ public class GamePlay extends SurfaceView implements SurfaceHolder.Callback {
             AppHolder.getGameManager().gameState = 1;
             AppHolder.getSoundPlay().playSwoosh();
         }else{
-            AppHolder.getSoundPlay().playWing();
+            AppHolder.getSoundPlay().playArm();
         }
 
-        AppHolder.getGameManager().bird.setVelocity(AppHolder.JUMP_VELOCITY);
+        AppHolder.getGameManager().swimmingChar.setVelocity(AppHolder.JUMP_VELOCITY);
         return true;
     }
 }
