@@ -1,14 +1,14 @@
 package com.example.android_sw;
 
-public class FlyingBird {
-    private int birdX;
-    private int birdY;
+public class SwimmingChar {
+    private int charX;
+    private int charY;
     private int currentFrame;
     private int velocity;
     public static int maximumFrame;
-    public FlyingBird() {
-        birdX = AppHolder.SCRN_WIDTH_X/2 - AppHolder.getBitmapControl().getBirdWidth()/2;
-        birdY = AppHolder.SCRN_HEIGHT_Y/2 - AppHolder.getBitmapControl().getBirdHeight()/2;
+    public SwimmingChar() {
+        charX = AppHolder.SCRN_WIDTH_X/2 - AppHolder.getBitmapControl().getCharWidth()/2;
+        charY = AppHolder.SCRN_HEIGHT_Y/2 - AppHolder.getBitmapControl().getCharHeight()/2;
         currentFrame = 0;
         maximumFrame = 2;
     }
@@ -19,16 +19,14 @@ public class FlyingBird {
         this.currentFrame = currentFrame;
     }
     public int getX(){
-        return birdX;
+        return charX;
     }
-    public int getY(){
-        return birdY;
-    }
+    public int getY(){ return charY; }
     public void setX(int birdX){
-        this.birdX = birdX;
+        this.charX = birdX;
     }
     public void setY(int birdY){
-        this.birdY = birdY;
+        this.charY = birdY;
     }
     public int getVelocity(){
         return velocity;
