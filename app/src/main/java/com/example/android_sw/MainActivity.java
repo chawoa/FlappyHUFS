@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void startCharacter(View view){
+        Intent intent = new Intent(this, SelectChar.class);
+        startActivity(intent);
+        finish();
+    }
 }
