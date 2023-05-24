@@ -61,9 +61,9 @@ public class BitmapControl {
     public int getBackgroundHeight(){
         return background.getHeight();
     } // 배경화면 높이 게터 메소드
-    public Bitmap imageScale(Bitmap bitmap){ // 배경화면 범위 설정 메소드
+    public Bitmap imageScale(Bitmap bitmap) { // 배경화면 범위 설정 메소드
         float width_heightRatio = getBackgroundWidth() / getBackgroundHeight();
-        int bgScaleWidth = (int)width_heightRatio*AppHolder.SCRN_WIDTH_X; // 실수형을 정수형으로 casting하여 변수에 대입
+        int bgScaleWidth = (int) width_heightRatio*AppHolder.SCRN_WIDTH_X; // 실수형을 정수형으로 casting하여 변수에 대입
         return Bitmap.createScaledBitmap(bitmap, bgScaleWidth, AppHolder.SCRN_HEIGHT_Y, false); // 비트맵 객체의 인자의 정보에 따라 설정된 비트맵 반환
     }
 }
