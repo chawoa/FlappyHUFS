@@ -34,8 +34,8 @@ public class MainThread extends Thread {
                 canvas = mySurfaceHolder.lockCanvas(); // mySurfaceHolder에서 canvas 호출
                 synchronized (mySurfaceHolder){ // mySurfaceHolder 동기화
                     AppHolder.getGameManager().backgroundAnimation(canvas); // AppHolder의 게임 매니저를 통해 배경 그리기
-                    AppHolder.getGameManager().birdAnimation(canvas); // AppHolder의 게임 매니저를 통해 캐릭터 애니메이션 그리기
-                    AppHolder.getGameManager().scrollingTube(canvas); // AppHolder의 게임 매니저를 통해 장애물 스크롤링
+                    AppHolder.getGameManager().charAnimation(canvas); // AppHolder의 게임 매니저를 통해 캐릭터 애니메이션 그리기
+                    AppHolder.getGameManager().scrollingObstacle(canvas); // AppHolder의 게임 매니저를 통해 장애물 스크롤링
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -67,10 +67,7 @@ public class MainThread extends Thread {
             }
         }
     }
-
-    public boolean isRunning(){ // 작동 여부를 불린 값으로 반환해주는 메소드
-        return Running;
-    }
+    
     public void setIsRunning(boolean state) { // 작동 여부를 부여하는 세터 메소드
         Running = state;
     }

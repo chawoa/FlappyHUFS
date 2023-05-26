@@ -1,10 +1,10 @@
 package com.example.android_sw;
 
-public class BgImage {
+public class BgImage { // 배경화면 생성 클래스
     private int image_X_background;
     private int image_Y_background;
     private int backgroundSpeed;
-    public BgImage() {
+    public BgImage() { // 배경화면 속성 생성자
         image_X_background = 0;
         image_Y_background = 0;
         backgroundSpeed = 4;

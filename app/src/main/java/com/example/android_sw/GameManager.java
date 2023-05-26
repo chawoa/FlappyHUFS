@@ -25,7 +25,7 @@ public class GameManager {
         gameState = 0;
         obstacleCollections = new ArrayList<>();
         rand = new Random();
-        generateTubeObject();
+        generateObstacleObject();
         initScoreVariables();
 
     }
@@ -47,7 +47,7 @@ public class GameManager {
     gameState == 2 : 게임 오버
     */
 
-    public void generateTubeObject() {
+    public void generateObstacleObject() {
         for (int j = 0; j < AppHolder.obstacleGap; j++) {
             int obstacleX = AppHolder.SCRN_WIDTH_X + j*AppHolder.obstacleDistance;
             int upObstacleCollectionY = AppHolder.minimumObstacleCollection_Y;
@@ -65,7 +65,7 @@ public class GameManager {
     4. 모든 장애물 스크롤링 및 그래픽 그리기
     5. 점수 화면에 출력
      */
-    public void scrollingTube(Canvas can) {
+    public void scrollingObstacle(Canvas can) {
         if (gameState == 1) {
             if ((obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
             && (obstacleCollections.get(winningObstacle).getUpObstacleCollection_Y() > swimmingChar.getY()
@@ -117,7 +117,7 @@ public class GameManager {
     2. 캐릭터의 Y좌표를 중력의 영향을 받아 업데이트
     3. 캐릭터 애니메이션 프레임 그리기
      */
-    public void birdAnimation(Canvas canvas) {
+    public void charAnimation(Canvas canvas) {
         if (gameState == 1) {
             if (swimmingChar.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getCharHeight()) || swimmingChar.getVelocity() < 0){
                 swimmingChar.setVelocity(swimmingChar.getVelocity() + AppHolder.gravityPull);
@@ -130,7 +130,7 @@ public class GameManager {
         canvas.drawBitmap(AppHolder.getBitmapControl().getChar(currentFrame), swimmingChar.getX(), swimmingChar.getY(), null);
         currentFrame++;
 
-        if(currentFrame > swimmingChar.maximumFrame) {
+        if (currentFrame > swimmingChar.maximumFrame) {
             currentFrame = 0;
         }
         swimmingChar.setCurrentFrame(currentFrame);
