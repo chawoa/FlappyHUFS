@@ -34,6 +34,7 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
         return soundPlay;
     } // 게임 내 효과음 게터 메소드
 
+
     public static void holdGameVariables() { // 게임에 사용되는 상수 변수 생성자 (AppHolder 클래스 객체 내부 변수)
         AppHolder.gravityPull = 5;
         AppHolder.JUMP_VELOCITY = -50;

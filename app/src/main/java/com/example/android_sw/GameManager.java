@@ -17,46 +17,40 @@ public class GameManager {
     ArrayList<ObstacleCollection> obstacleCollections; // 장애물 저장 배열
     Random rand; // 난수 생성을 위한 변수
     int scoreCount; // 점수 저장 변수
-    int winningObstacle; // 통과한 장애물 개수 변수
-    Paint designPaint; // 그리기 위한 Paint 객체 선언
+    int winningObstacle; // 통과한 장애물 변수
+    Paint designPaint; 
+    public GameManager() {
+        bgImage = new BgImage();
+        swimmingChar = new SwimmingChar();
+        gameState = 0;
+        obstacleCollections = new ArrayList<>();
+        rand = new Random();
+        generateTubeObject();
+        initScoreVariables();
 
-    /*
-    gameState == 0 : 게임 시작 되지 않음
-    gameState == 1 : 게임 진행중
+    }
+
+    public void initScoreVariables() {
+        scoreCount = 0;
+        winningObstacle = 0;
+        designPaint = new Paint();
+        designPaint.setColor(Color.YELLOW);
+        designPaint.setTextSize(250);
+        designPaint.setStyle(Paint.Style.FILL);
+        designPaint.setFakeBoldText(true);
+        designPaint.setShadowLayer(5.0f, 20.0f, 20.0f, Color.BLACK);
+>>>>>>> chCharSelect
+
+    }
+  
+     */
+    gameState == 0 : 게임 실행 X
+    gameState == 1 : 게임 실행 중
     gameState == 2 : 게임 오버
      */
 
-    public GameManager() { // 게임 상태 설정을 위한 생성자
-        bgImage = new BgImage(); // 배경 객체
-        swimmingChar = new SwimmingChar(); // 게임 캐릭터 객체
-        gameState = 0; // 게임 진행 상태 표시 변수
-        obstacleCollections = new ArrayList<>(); // 장애물 배열
-        rand = new Random(); // 난수 생성 변수
-        generateObstacle(); // 장애물 생성
-        initScoreVariables(); // 점수 저장
-
-    }
-
-    public void initScoreVariables(){ // 점수 저장 및 텍스트 형식 설정 생성자
-        scoreCount = 0; // 점수 저장 변수
-        winningObstacle = 0; // 통과한 장애물 개수 저장 변수
-        designPaint = new Paint(); // Paint 객체인 designPaint 선언
-        designPaint.setColor(Color.YELLOW); // 색깔 → 노란색
-        designPaint.setTextSize(250); // 텍스트 크기 설정 (250픽셀)
-        designPaint.setStyle(Paint.Style.FILL); // 텍스트 내부를 채워진 형태로 설정
-        designPaint.setFakeBoldText(true); // 텍스트를 굵게 표시하는 설정 활성화
-        designPaint.setShadowLayer(5.0f, 20.0f, 20.0f, Color.BLACK); // 그려지는 텍스트에 그림자 효과 적용
-
-    }
-
-    /*
-    <장애물 생성 메소드>
-    1. 난수를 이용해 반복적으로 장애물의 X좌표와 상단 장애물의 Y좌표 설정
-    2. obstacleCollection 객체 생성
-    3. 해당 객체를 배열에 저장
-     */
-    public void generateObstacle() {
-        for(int j = 0; j < AppHolder.obstacleGap; j++) {
+    public void generateTubeObject() {
+        for (int j = 0; j < AppHolder.obstacleGap; j++) {
             int obstacleX = AppHolder.SCRN_WIDTH_X + j*AppHolder.obstacleDistance;
             int upObstacleCollectionY = AppHolder.minimumObstacleCollection_Y;
             rand.nextInt(AppHolder.maximumObstacleCollection_Y - AppHolder.minimumObstacleCollection_Y + 1);
@@ -64,6 +58,7 @@ public class GameManager {
             obstacleCollections.add(obstacleCollection);
         }
     }
+  
     /*
     <장애물 스크롤링 게임 로직 처리 메소드>
     1. gameState == 1 일때만 작동 (즉, 게임 진행 중일 때 작동)
@@ -72,11 +67,8 @@ public class GameManager {
     4. 모든 장애물 스크롤링 및 그래픽 그리기
     5. 점수 화면에 출력
      */
-    public void scrollingObstacle(Canvas can) {
-        // 게임이 진행중 이라면 실행
+    public void scrollingTube(Canvas can) {
         if (gameState == 1) {
-
-            // 장애물과 캐릭터가 충돌 했을 시
             if ((obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
             && (obstacleCollections.get(winningObstacle).getUpObstacleCollection_Y() > swimmingChar.getY()
             || obstacleCollections.get(winningObstacle).getDownObstacle_Y() < swimmingChar.getY() +
@@ -89,8 +81,7 @@ public class GameManager {
                 mContext.startActivity(mIntent);
                 ((Activity)mContext).finish();
             }
-
-            // 캐릭터가 장애물을 통과 했을 시
+          
             if (obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() - AppHolder.getBitmapControl().getObstacleWidth()) {
                 scoreCount ++;
                 winningObstacle ++;
@@ -99,8 +90,7 @@ public class GameManager {
                     winningObstacle = 0;
                 }
             }
-
-            // 장애물 스크롤링
+          
             for (int j = 0; j < AppHolder.obstacle_numbers; j++) {
                 if (obstacleCollections.get(j).getXObstacle()<-AppHolder.getBitmapControl().getObstacleWidth()) {
                     obstacleCollections.get(j).setXobstacle(obstacleCollections.get(j).getXObstacle()
@@ -122,17 +112,16 @@ public class GameManager {
             can.drawText("" + scoreCount, 620, 400, designPaint);
         }
     }
-
+  
     /*
     <캐릭터 애니메이션 처리 메소드>
     1. gameState == 1이면 로직 수행
     2. 캐릭터의 Y좌표를 중력의 영향을 받아 업데이트
     3. 캐릭터 애니메이션 프레임 그리기
      */
-    public void charAnimation(Canvas canvas) {
-        // 게임이 진행중 이라면 실행
+    public void birdAnimation(Canvas canvas) {
         if (gameState == 1) {
-            if (swimmingChar.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getCharHeight()) || swimmingChar.getVelocity() < 0) {
+            if (swimmingChar.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getCharHeight()) || swimmingChar.getVelocity() < 0){
                 swimmingChar.setVelocity(swimmingChar.getVelocity() + AppHolder.gravityPull);
                 swimmingChar.setY(swimmingChar.getY() + swimmingChar.getVelocity());
             }
@@ -142,7 +131,8 @@ public class GameManager {
         int currentFrame = swimmingChar.getCurrentFrame();
         canvas.drawBitmap(AppHolder.getBitmapControl().getChar(currentFrame), swimmingChar.getX(), swimmingChar.getY(), null);
         currentFrame++;
-        if (currentFrame > swimmingChar.maximumFrame) {
+
+        if(currentFrame > swimmingChar.maximumFrame) {
             currentFrame = 0;
         }
         swimmingChar.setCurrentFrame(currentFrame);

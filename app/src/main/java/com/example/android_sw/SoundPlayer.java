@@ -15,23 +15,23 @@ public class SoundPlayer {
         score = MediaPlayer.create(context, R.raw.ping);
 
     }
-    public void playSwoosh(){
-        if(move != null){
+    public void playSwoosh() {
+        if (move != null) {
             move.start();
         }
     }
-    public void playPing(){
-        if(score != null){
+    public void playPing() {
+        if (score != null) {
             score.start();
         }
     }
-    public void playCrash(){
-        if(crash != null){
+    public void playCrash() {
+        if (crash != null) {
             crash.start();
         }
     }
-    public void playArm(){
-        if(jump != null){
+    public void playArm() {
+        if (jump != null) {
             jump.start();
         }
     }

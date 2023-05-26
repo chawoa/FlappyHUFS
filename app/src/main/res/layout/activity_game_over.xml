@@ -88,26 +88,13 @@
             android:id="@+id/btnRestart"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="RESTART"
-            android:fontFamily="@font/fonta"
             android:layout_below="@+id/gameOver"
             android:layout_centerHorizontal="true"
-            android:textSize="30sp"
-            android:textColor="@color/myColor"
-            android:background="@drawable/btn_gradient_style"></Button>
-
-        <Button
-            android:id="@+id/btnMore"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="MORE::"
-            android:fontFamily="@font/fonta"
-            android:layout_below="@+id/btnRestart"
-            android:layout_centerHorizontal="true"
-            android:textSize="30sp"
-            android:textColor="@color/myColor"
             android:background="@drawable/btn_gradient_style"
-            android:layout_marginTop="10dp"></Button>
+            android:fontFamily="@font/fonta"
+            android:text="재시작"
+            android:textColor="@color/myColor"
+            android:textSize="24sp"></Button>
     </RelativeLayout>
 
 </RelativeLayout>

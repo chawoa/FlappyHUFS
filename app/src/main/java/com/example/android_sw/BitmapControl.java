@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 public class BitmapControl {
+    /*
+    res 파일의 리소스를 객체화 시켜주는 생성자
+     */
     Bitmap background; // 배경 객체
     Bitmap[] SwimmingChar; // 캐릭터 수영 모션 저장 배열
     Bitmap upObstacle, downObstacle; // 상단, 하단 장애물 객체
@@ -58,10 +61,12 @@ public class BitmapControl {
     public int getBackgroundWidth(){ // 배경화면 너비 게터 메소드
         return background.getWidth();
     }
-    public int getBackgroundHeight(){
+    public int getBackgroundHeight(){ // 배경화면 높이 게터 메소드
         return background.getHeight();
-    } // 배경화면 높이 게터 메소드
+    }
     public Bitmap imageScale(Bitmap bitmap) { // 배경화면 범위 설정 메소드
+    }
+    public Bitmap imageScale(Bitmap bitmap) {
         float width_heightRatio = getBackgroundWidth() / getBackgroundHeight();
         int bgScaleWidth = (int) width_heightRatio*AppHolder.SCRN_WIDTH_X; // 실수형을 정수형으로 casting하여 변수에 대입
         return Bitmap.createScaledBitmap(bitmap, bgScaleWidth, AppHolder.SCRN_HEIGHT_Y, false); // 비트맵 객체의 인자의 정보에 따라 설정된 비트맵 반환

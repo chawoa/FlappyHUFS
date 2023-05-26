@@ -5,14 +5,12 @@ import android.os.SystemClock;
 import android.view.SurfaceHolder;
 
 public class MainThread extends Thread {
-    SurfaceHolder mySurfaceHolder; // SurfaceHolder 타입의 변수
-    long timeSpent; // 경과 시간 저장 변수
-    long kickOffTime; // 시작 시간 저장 변수
-    long WAIT = 31; // 지연 시간
-    boolean Running; // 작동 상태를 알려주는 불린 변수
-    private static Canvas canvas; // Canvas 타입의 변수
-
-    // 메인 스레드 클래스의 생성자
+    SurfaceHolder mySurfaceHolder;
+    long timeSpent;
+    long kickOffTime;
+    long WAIT = 31;
+    boolean Running;
+    private static Canvas canvas;
     public MainThread(SurfaceHolder surfaceHolder) {
         this.mySurfaceHolder = surfaceHolder;
         Running = true;
@@ -29,15 +27,15 @@ public class MainThread extends Thread {
      */
     @Override
     public void run() {
-        while (Running) {
-            kickOffTime = SystemClock.uptimeMillis(); // 현재 시간으로 동기화
-            canvas = null; // 변수 초기화
+        while(Running) {
+            kickOffTime = SystemClock.uptimeMillis();
+            canvas = null;
             try {
                 canvas = mySurfaceHolder.lockCanvas(); // mySurfaceHolder에서 canvas 호출
-                synchronized (mySurfaceHolder) { // mySurfaceHolder 동기화
+                synchronized (mySurfaceHolder){ // mySurfaceHolder 동기화
                     AppHolder.getGameManager().backgroundAnimation(canvas); // AppHolder의 게임 매니저를 통해 배경 그리기
-                    AppHolder.getGameManager().charAnimation(canvas); // AppHolder의 게임 매니저를 통해 캐릭터 애니메이션 그리기
-                    AppHolder.getGameManager().scrollingObstacle(canvas); // AppHolder의 게임 매니저를 통해 장애물 스크롤링
+                    AppHolder.getGameManager().birdAnimation(canvas); // AppHolder의 게임 매니저를 통해 캐릭터 애니메이션 그리기
+                    AppHolder.getGameManager().scrollingTube(canvas); // AppHolder의 게임 매니저를 통해 장애물 스크롤링
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -53,6 +51,7 @@ public class MainThread extends Thread {
                 if (canvas != null) {
                     try {
                         mySurfaceHolder.unlockCanvasAndPost(canvas); // canvas 해제
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
