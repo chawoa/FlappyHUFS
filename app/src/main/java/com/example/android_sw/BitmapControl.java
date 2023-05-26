@@ -7,8 +7,7 @@ import android.graphics.BitmapFactory;
 public class BitmapControl {
     Bitmap background;
     Bitmap[] SwimmingChar;
-    Bitmap upObstacle;
-    Bitmap downObstacle;
+    Bitmap upObstacle, downObstacle;
     Bitmap upColoredObstacle, downColoredObstacle;
     public BitmapControl(Resources res) {
         background = BitmapFactory.decodeResource(res, R.drawable.background);
@@ -58,7 +57,7 @@ public class BitmapControl {
     public int getBackgroundHeight(){
         return background.getHeight();
     }
-    public Bitmap imageScale(Bitmap bitmap){
+    public Bitmap imageScale(Bitmap bitmap) {
         float width_heightRatio = getBackgroundWidth() / getBackgroundHeight();
         int bgScaleWidth = (int)width_heightRatio*AppHolder.SCRN_WIDTH_X;
         return Bitmap.createScaledBitmap(bitmap, bgScaleWidth, AppHolder.SCRN_HEIGHT_Y, false);

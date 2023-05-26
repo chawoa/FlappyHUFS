@@ -16,6 +16,9 @@
             android:name=".SelectChar"
             android:exported="false" />
         <activity
+            android:name=".ScoreCheck"
+            android:exported="false" />
+        <activity
             android:name=".GameOver"
             android:exported="false" />
         <activity

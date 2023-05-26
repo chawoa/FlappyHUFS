@@ -29,11 +29,11 @@ public class GamePlay extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
 
         boolean retry = true;
-        while(retry){
-            try{
+        while (retry) {
+            try {
                 mainThread.setIsRunning(false);
                 mainThread.join();
-            }catch(InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             retry = false;
@@ -42,11 +42,11 @@ public class GamePlay extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event){
-        if(AppHolder.getGameManager().gameState == 0){
+    public boolean onTouchEvent(MotionEvent event) {
+        if (AppHolder.getGameManager().gameState == 0) {
             AppHolder.getGameManager().gameState = 1;
             AppHolder.getSoundPlay().playSwoosh();
-        }else{
+        } else {
             AppHolder.getSoundPlay().playArm();
         }
 

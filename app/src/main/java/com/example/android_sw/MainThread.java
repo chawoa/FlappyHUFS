@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.os.SystemClock;
 import android.view.SurfaceHolder;
 
-public class MainThread extends Thread{
+public class MainThread extends Thread {
     SurfaceHolder mySurfaceHolder;
     long timeSpent;
     long kickOffTime;
@@ -17,34 +17,34 @@ public class MainThread extends Thread{
     }
 
     @Override
-    public void run(){
-        while(Running){
+    public void run() {
+        while(Running) {
             kickOffTime = SystemClock.uptimeMillis();
             canvas = null;
-            try{
+            try {
                 canvas = mySurfaceHolder.lockCanvas();
                 synchronized (mySurfaceHolder){
                     AppHolder.getGameManager().backgroundAnimation(canvas);
                     AppHolder.getGameManager().birdAnimation(canvas);
                     AppHolder.getGameManager().scrollingTube(canvas);
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             finally {
-                if(canvas != null){
-                    try{
+                if(canvas != null) {
+                    try {
                         mySurfaceHolder.unlockCanvasAndPost(canvas);
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
             }
             timeSpent = SystemClock.uptimeMillis() - kickOffTime;
-            if(timeSpent < WAIT){
-                try{
+            if (timeSpent < WAIT) {
+                try {
                     Thread.sleep(WAIT - timeSpent);
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }

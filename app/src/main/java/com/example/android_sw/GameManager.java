@@ -16,8 +16,8 @@ public class GameManager {
     static int gameState;
     ArrayList<ObstacleCollection> obstacleCollections;
     Random rand;
-    int scoreCount; //this will be used to store the score
-    int winningTube; //this will used to determine the winning tube obstacle
+    int scoreCount; // 점수 저장 변수
+    int winningObstacle; // 통과한 장애물 변수
     Paint designPaint;
     public GameManager() {
         bgImage = new BgImage();
@@ -30,9 +30,9 @@ public class GameManager {
 
     }
 
-    public void initScoreVariables(){
+    public void initScoreVariables() {
         scoreCount = 0;
-        winningTube = 0;
+        winningObstacle = 0;
         designPaint = new Paint();
         designPaint.setColor(Color.YELLOW);
         designPaint.setTextSize(250);
@@ -43,13 +43,13 @@ public class GameManager {
     }
 
     /*
-    gameState == 0 : not running
-    gameState == 1 : the game is running
-    gameState == 2 : The game is over
+    gameState == 0 : 게임 실행 X
+    gameState == 1 : 게임 실행 중
+    gameState == 2 : 게임 오버
      */
 
-    public void generateTubeObject(){
-        for(int j = 0; j < AppHolder.obstacleGap; j++){
+    public void generateTubeObject() {
+        for (int j = 0; j < AppHolder.obstacleGap; j++) {
             int obstacleX = AppHolder.SCRN_WIDTH_X + j*AppHolder.obstacleDistance;
             int upObstacleCollectionY = AppHolder.minimumObstacleCollection_Y;
             rand.nextInt(AppHolder.maximumObstacleCollection_Y - AppHolder.minimumObstacleCollection_Y + 1);
@@ -58,13 +58,12 @@ public class GameManager {
         }
     }
 
-    public void scrollingTube(Canvas can){
-        if(gameState == 1){
-
-            if((obstacleCollections.get(winningTube).getXObstacle() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
-            &&(obstacleCollections.get(winningTube).getUpObstacleCollection_Y() > swimmingChar.getY()
-            ||obstacleCollections.get(winningTube).getDownObstacle_Y() < swimmingChar.getY() +
-                    AppHolder.getBitmapControl().getCharHeight())){
+    public void scrollingTube(Canvas can) {
+        if (gameState == 1) {
+            if ((obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
+            && (obstacleCollections.get(winningObstacle).getUpObstacleCollection_Y() > swimmingChar.getY()
+            || obstacleCollections.get(winningObstacle).getDownObstacle_Y() < swimmingChar.getY() +
+                    AppHolder.getBitmapControl().getCharHeight())) {
                 gameState = 2;
                 AppHolder.getSoundPlay().playCrash();
                 Context mContext = AppHolder.gameActivityContext;
@@ -74,16 +73,16 @@ public class GameManager {
                 ((Activity)mContext).finish();
             }
 
-            if(obstacleCollections.get(winningTube).getXObstacle() < swimmingChar.getX() - AppHolder.getBitmapControl().getObstacleWidth()){
+            if(obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() - AppHolder.getBitmapControl().getObstacleWidth()) {
                 scoreCount ++;
-                winningTube ++;
+                winningObstacle ++;
                 AppHolder.getSoundPlay().playPing();
-                if(winningTube > AppHolder.obstacle_numbers - 1){
-                    winningTube = 0;
+                if (winningObstacle > AppHolder.obstacle_numbers - 1) {
+                    winningObstacle = 0;
                 }
             }
-            for(int j = 0; j < AppHolder.obstacle_numbers; j++){
-                if(obstacleCollections.get(j).getXObstacle()<-AppHolder.getBitmapControl().getObstacleWidth()){
+            for (int j = 0; j < AppHolder.obstacle_numbers; j++) {
+                if (obstacleCollections.get(j).getXObstacle()<-AppHolder.getBitmapControl().getObstacleWidth()) {
                     obstacleCollections.get(j).setXobstacle(obstacleCollections.get(j).getXObstacle()
                     +AppHolder.obstacle_numbers*AppHolder.obstacleDistance);
                     int upTubeCollectionY = AppHolder.minimumObstacleCollection_Y +
@@ -104,9 +103,9 @@ public class GameManager {
         }
     }
 
-    public void birdAnimation(Canvas canvas){
-        if(gameState == 1){
-            if(swimmingChar.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getCharHeight()) || swimmingChar.getVelocity() < 0){
+    public void birdAnimation(Canvas canvas) {
+        if (gameState == 1) {
+            if (swimmingChar.getY() < (AppHolder.SCRN_HEIGHT_Y - AppHolder.getBitmapControl().getCharHeight()) || swimmingChar.getVelocity() < 0){
                 swimmingChar.setVelocity(swimmingChar.getVelocity() + AppHolder.gravityPull);
                 swimmingChar.setY(swimmingChar.getY() + swimmingChar.getVelocity());
             }
@@ -115,7 +114,7 @@ public class GameManager {
         int currentFrame = swimmingChar.getCurrentFrame();
         canvas.drawBitmap(AppHolder.getBitmapControl().getChar(currentFrame), swimmingChar.getX(), swimmingChar.getY(), null);
         currentFrame++;
-        if(currentFrame > swimmingChar.maximumFrame){
+        if(currentFrame > swimmingChar.maximumFrame) {
             currentFrame = 0;
         }
         swimmingChar.setCurrentFrame(currentFrame);
@@ -123,11 +122,11 @@ public class GameManager {
 
     public void backgroundAnimation(Canvas canvas){
         bgImage.setX(bgImage.getX() - bgImage.getVelocity());
-        if(bgImage.getX() < -AppHolder.getBitmapControl().getBackgroundWidth()){
+        if (bgImage.getX() < -AppHolder.getBitmapControl().getBackgroundWidth()) {
             bgImage.setX(0);
         }
         canvas.drawBitmap(AppHolder.getBitmapControl().getBackground(), bgImage.getX(), bgImage.getY(), null);
-        if (bgImage.getX() <-(AppHolder.getBitmapControl().getBackgroundWidth() - AppHolder.SCRN_WIDTH_X)){
+        if (bgImage.getX() <-(AppHolder.getBitmapControl().getBackgroundWidth() - AppHolder.SCRN_WIDTH_X)) {
             canvas.drawBitmap(AppHolder.getBitmapControl().getBackground(), bgImage.getX() +
                     AppHolder.getBitmapControl().getBackgroundWidth(), bgImage.getY(), null);
         }

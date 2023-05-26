@@ -41,16 +41,21 @@ public class MainActivity extends AppCompatActivity {
             alert.show();
         });
     }
-    public void startGame(View view){
+    public void startGame(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
         finish();
     }
 
-    public void startCharacter(View view){
+    public void startCharacter(View view) {
         Intent intent = new Intent(this, SelectChar.class);
         startActivity(intent);
         finish();
     }
 
+    public void scoreCheck(View view) {
+        Intent intent = new Intent(this, ScoreCheck.class);
+        startActivity(intent);
+        finish();
+    }
 }

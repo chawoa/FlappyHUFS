@@ -21,7 +21,7 @@ public class AppHolder {
     static  Context gameActivityContext;
     static SoundPlayer soundPlay;
 
-    public static void assign(Context context){
+    public static void assign(Context context) {
         mapScreenSize(context);
         bitmapControl = new BitmapControl(context.getResources());
         holdGameVariables();
@@ -34,7 +34,7 @@ public class AppHolder {
         return soundPlay;
     }
 
-    public static void holdGameVariables(){
+    public static void holdGameVariables() {
         AppHolder.gravityPull = 5;
         AppHolder.JUMP_VELOCITY = -50;
         AppHolder.obstacleGap = 650;
@@ -52,7 +52,7 @@ public class AppHolder {
         return gameManager;
     }
 
-    private static void mapScreenSize(Context context){
+    private static void mapScreenSize(Context context) {
         WindowManager manager = (WindowManager) context.getSystemService(context.WINDOW_SERVICE);
         Display dsp = manager.getDefaultDisplay();
         DisplayMetrics dMetrics = new DisplayMetrics();
