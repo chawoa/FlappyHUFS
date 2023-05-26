@@ -44,6 +44,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_gradient_style"
         android:fontFamily="@font/fonta"
+        android:onClick="scoreCheck"
         android:text="기록"
         android:textColor="@color/myColor"
         android:textSize="34sp"></Button>

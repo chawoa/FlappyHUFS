@@ -16,13 +16,13 @@ public class SelectChar extends AppCompatActivity {
         setContentView(R.layout.activity_select_char);
     }
 
-    public void BackToMain(View view){
+    public void BackToMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
-    public void CheckChar(View view){
+    public void CheckChar(View view) {
         ImageButton clickedButton = (ImageButton) view;
 
 

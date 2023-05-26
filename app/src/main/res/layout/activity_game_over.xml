@@ -92,7 +92,7 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/btn_gradient_style"
             android:fontFamily="@font/fonta"
-            android:text="RESTART"
+            android:text="재시작"
             android:textColor="@color/myColor"
             android:textSize="24sp"></Button>
     </RelativeLayout>
