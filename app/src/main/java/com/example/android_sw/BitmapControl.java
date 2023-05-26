@@ -19,10 +19,12 @@ public class BitmapControl {
     public BitmapControl(Resources res) {
         background = BitmapFactory.decodeResource(res, R.drawable.background); // 배경화면으로 사용할 리소스 복호화
         background = imageScale(background); // 배경화면의 스케일
-        SwimmingChar = new Bitmap[3]; // 각각의 동작을 복호화하여 배열에 저장 (bird1, bird2, bird3)
-        SwimmingChar[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
-        SwimmingChar[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
-        SwimmingChar[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
+        SelectChar selectChar = new SelectChar();
+        selectChar.Checker(res);
+        SwimmingChar = new Bitmap[3];
+        SwimmingChar[0] = SelectChar.Image_Zero();
+        SwimmingChar[1] = SelectChar.Image_One();
+        SwimmingChar[2] = SelectChar.Image_Two();
         upObstacle = BitmapFactory.decodeResource(res, R.drawable.up_tube); // 상단 장애물 리소스 복호화
         downObstacle = BitmapFactory.decodeResource(res, R.drawable.down_tube); // 하단 장애물 리소스 복호화
         upColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.colored_tube_up); // 상단 채색된 장애물 복호화
