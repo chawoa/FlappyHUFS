@@ -39,15 +39,13 @@ public class GameManager {
         designPaint.setStyle(Paint.Style.FILL);
         designPaint.setFakeBoldText(true);
         designPaint.setShadowLayer(5.0f, 20.0f, 20.0f, Color.BLACK);
->>>>>>> chCharSelect
-
     }
   
-     */
+    /*
     gameState == 0 : 게임 실행 X
     gameState == 1 : 게임 실행 중
     gameState == 2 : 게임 오버
-     */
+    */
 
     public void generateTubeObject() {
         for (int j = 0; j < AppHolder.obstacleGap; j++) {
