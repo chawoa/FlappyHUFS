@@ -3,11 +3,11 @@ package com.example.android_sw;
 import android.content.Context;
 import android.media.MediaPlayer;
 
-public class SoundPlayer {
+public class SoundPlayer { // 게임 내 효과음 클래스
     Context context;
-    MediaPlayer move,score,crash,jump;
+    MediaPlayer move, score, crash, jump;
 
-    public SoundPlayer(Context context) {
+    public SoundPlayer(Context context) { // 효과음 객체 생성자
         this.context = context;
         move = MediaPlayer.create(context, R.raw.swoosh);
         crash = MediaPlayer.create(context, R.raw.hit);

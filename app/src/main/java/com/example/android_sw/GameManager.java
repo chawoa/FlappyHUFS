@@ -41,10 +41,10 @@ public class GameManager {
         designPaint.setShadowLayer(5.0f, 20.0f, 20.0f, Color.BLACK);
     }
   
-    /*
-    gameState == 0 : 게임 실행 X
-    gameState == 1 : 게임 실행 중
-    gameState == 2 : 게임 오버
+    /**
+     * gameState == 0 : 게임 실행 X
+     * gameState == 1 : 게임 실행 중
+     * gameState == 2 : 게임 오버
     */
 
     public void generateObstacleObject() {
@@ -57,13 +57,13 @@ public class GameManager {
         }
     }
   
-    /*
-    <장애물 스크롤링 게임 로직 처리 메소드>
-    1. gameState == 1 일때만 작동 (즉, 게임 진행 중일 때 작동)
-    2. 현재 장애물과 캐릭터의 충돌 검사 및 게임 오버 상태로의 전환
-    3. 장애물과 캐릭터의 X좌표를 비교하여 점수 증가 & 통과한 장애물 개수 업데이트
-    4. 모든 장애물 스크롤링 및 그래픽 그리기
-    5. 점수 화면에 출력
+    /**
+     * <장애물 스크롤링 게임 로직 처리 메소드>
+     *     1. gameState == 1 일때만 작동 (즉, 게임 진행 중일 때 작동)
+     *     2. 현재 장애물과 캐릭터의 충돌 검사 및 게임 오버 상태로의 전환
+     *     3. 장애물과 캐릭터의 X좌표를 비교하여 점수 증가 & 통과한 장애물 개수 업데이트
+     *     4. 모든 장애물 스크롤링 및 그래픽 그리기
+     *     5. 점수 화면에 출력
      */
     public void scrollingObstacle(Canvas can) {
         if (gameState == 1) {
@@ -111,11 +111,11 @@ public class GameManager {
         }
     }
   
-    /*
-    <캐릭터 애니메이션 처리 메소드>
-    1. gameState == 1이면 로직 수행
-    2. 캐릭터의 Y좌표를 중력의 영향을 받아 업데이트
-    3. 캐릭터 애니메이션 프레임 그리기
+    /**
+     * <캐릭터 애니메이션 처리 메소드>
+     *     1. gameState == 1이면 로직 수행
+     *     2. 캐릭터의 Y좌표를 중력의 영향을 받아 업데이트
+     *     3. 캐릭터 애니메이션 프레임 그리기
      */
     public void charAnimation(Canvas canvas) {
         if (gameState == 1) {
@@ -136,11 +136,11 @@ public class GameManager {
         swimmingChar.setCurrentFrame(currentFrame);
     }
 
-    /*
-    <배경 애니메이션 처리 메소드>
-    1. 배경의 X 좌표를 업데이트하여 배경 스크롤링
-    2. 배경 그리기
-    3. 배경이 화면을 벗어나면 반대 쪽에 다시 그려 연속 스크롤링 효과 구현
+    /**
+     * <배경 애니메이션 처리 메소드>
+     *     1. 배경의 X 좌표를 업데이트하여 배경 스크롤링
+     *     2. 배경 그리기\
+     *     3. 배경이 화면을 벗어나면 반대 쪽에 다시 그려 연속 스크롤링 효과 구현
      */
     public void backgroundAnimation(Canvas canvas) {
         bgImage.setX(bgImage.getX() - bgImage.getVelocity());
