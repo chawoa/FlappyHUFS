@@ -15,23 +15,24 @@ public class SelectChar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_char);
+        setContentView(R.layout.activity_select_char); // 현재 액티비티에 표시할 레이아웃 설정
+        updateChecking(); // boolean true값을 체크 표시하는 함수
     }
 
     public void BackToMain(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
-    }
+    } // 메인 화면으로 돌아가는 함수
 
 
-    /*여기서 부터 작성중------------------------------------------------*/
-    public static boolean Basic_selected;
-    public static boolean Glasses_selected = true;
-    public static boolean Others_selected;
-    public static Bitmap[] SwimChar = new Bitmap[3];
+    public static boolean Basic_selected = true; // 기본 캐릭터 boolean 값
+    public static boolean Glasses_selected; // 수경 쓴 캐릭터 boolean 값
+    public static boolean Others_selected; // ... 캐릭터 boolean 값
+    public static Bitmap[] SwimChar = new Bitmap[3]; // 캐릭터 저장 할 임시 배열
 
 
+    // 캐릭터 클릭 시 캐릭터들의 각 boolean 값들을 변경해주는 함수
     public void CheckChar(View view){
         ImageButton clickedButton = (ImageButton) view;
 
@@ -54,36 +55,40 @@ public class SelectChar extends AppCompatActivity {
 
     }
 
+    // 선택시 체크표시를 하는 함수
     private void updateChecking(){
         // 이미지 버튼 상태 업데이트
         ImageButton button1 = findViewById(R.id.Char_1);
         ImageButton button2 = findViewById(R.id.Char_2);
         ImageButton button3 = findViewById(R.id.Char_3);
 
-        button1.setImageResource(Basic_selected ? R.drawable.checking_img : R.drawable.bird1);
-        button2.setImageResource(Glasses_selected ? R.drawable.checking_img : R.drawable.bird2);
-        button3.setImageResource(Others_selected ? R.drawable.checking_img : R.drawable.bird3);
+        button1.setImageResource(Basic_selected ? R.drawable.checking_img : R.drawable.student_1);
+        button2.setImageResource(Glasses_selected ? R.drawable.checking_img : R.drawable.student_2);
+        button3.setImageResource(Others_selected ? R.drawable.checking_img : R.drawable.student_3);
     }
+    
+    // boolean 값에 따른 캐릭터 변경하는 함수
     public void Checker(Resources res) {
         if (Basic_selected) {
-            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
-            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
-            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
+            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
+            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
+            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
         } else if (Glasses_selected) {
             SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
             SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
             SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
         } else if (Others_selected) {
-            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
-            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
-            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
+            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
+            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
+            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
         }else{
-            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.bird1);
-            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.bird2);
-            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.bird3);
+            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
+            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
+            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
         }
     }
-
+    
+    // 배열의 값을 다른 클래스에 전달하기 위한 함수 선언
     public static Bitmap Image_Zero(){
         return SwimChar[0];
     }
