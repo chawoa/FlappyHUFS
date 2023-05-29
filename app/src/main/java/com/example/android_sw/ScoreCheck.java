@@ -30,7 +30,7 @@ public class ScoreCheck extends AppCompatActivity {
 
         for (int i = 1; i <= 5; i++) {
             int score = pref.getInt("score" + i, 0);
-            scores.append(i).append(". ").append(score).append("\n");
+            scores.append(i).append(". ").append(score).append("\n\n");
         }
 
         topScoresDisplay.setText(scores.toString());
