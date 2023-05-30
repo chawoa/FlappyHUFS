@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 /*
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppHolder.assign(this.getApplicationContext());
+
+        // 전체 화면 모드로 변경
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        // 상태 표시줄 숨기기
+        getSupportActionBar().hide();
 
         exitBtn = (Button) findViewById(R.id.exitBtn);
         exitBtn.setOnClickListener(v -> {
