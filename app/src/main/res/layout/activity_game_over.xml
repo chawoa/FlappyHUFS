@@ -32,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7"
+                android:textColor="@color/black"
                 android:textSize="30sp"
                 android:fontFamily="@font/fonta"></TextView>
             <TextView
@@ -39,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="BEST"
                 android:textSize="30sp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/fonta"></TextView>
 
         </LinearLayout>
@@ -54,12 +56,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7"
+                android:textColor="@color/black"
                 android:textSize="30sp"
                 android:fontFamily="@font/fonta"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SCORE"
+                android:textColor="@color/black"
                 android:textSize="30sp"
                 android:fontFamily="@font/fonta"></TextView>
 
@@ -82,7 +86,7 @@
             android:textSize="50sp"
             android:fontFamily="@font/fonta"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/colorYellow"></TextView>
+            android:textColor="@color/black"></TextView>
 
         <Button
             android:id="@+id/btnRestart"
