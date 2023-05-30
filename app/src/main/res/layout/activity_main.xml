@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/fonta"
-        android:text="FLAPPY BIRD"
+        android:text="FLAPPY HUFS"
         android:layout_marginTop="60dp"
-        android:textColor="@color/colorYellow"
+        android:textColor="@color/black"
         android:textSize="50sp"></TextView>
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_below="@+id/textV"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:background="@drawable/bird1"></ImageView>
+        android:background="@drawable/student_1"></ImageView>
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -46,7 +46,7 @@
         android:fontFamily="@font/fonta"
         android:onClick="scoreCheck"
         android:text="기록"
-        android:textColor="@color/myColor"
+        android:textColor="@color/black"
         android:textSize="34sp"></Button>
 
     <Button
@@ -73,7 +73,7 @@
         android:fontFamily="@font/fonta"
         android:onClick="startCharacter"
         android:text="캐릭터 선택"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/black"
         android:textSize="34sp"></Button>
 
 </RelativeLayout>
