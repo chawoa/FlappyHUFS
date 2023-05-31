@@ -18,11 +18,18 @@ public class SelectChar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_char); // 현재 액티비티에 표시할 레이아웃 설정
-        updateChecking(); // boolean true값을 체크 표시하는 함수
+        setContentView(R.layout.activity_select_char);
+        updateChecking();
+
+        // 이전 경험치 값 초기화
+        int previousExp = getIntent().getIntExtra("previousExp", 0);
+        ExpStore.setPreviousExp(previousExp); // 경험치 누적
 
         // expBar 초기화
         expBar = findViewById(R.id.expBar);
+
+        // 최대 경험치 값 설정
+        maxExp = 100; // 예시로 100으로 설정, 실제로 사용하는 최대 경험치 값을 설정해야 합니다.
 
         // 경험치 바 업데이트
         updateExpBar();
@@ -72,8 +79,8 @@ public class SelectChar extends AppCompatActivity {
 
     }
 
-    // 선택시 체크표시를 하는 함수
-    private void updateChecking(){
+    // 선택시 체크 표시를 하는 함수
+    private void updateChecking() {
         // 이미지 버튼 상태 업데이트
         ImageButton button1 = findViewById(R.id.Char_1);
         ImageButton button2 = findViewById(R.id.Char_2);

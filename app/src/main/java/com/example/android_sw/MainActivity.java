@@ -67,10 +67,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void startCharacter(View view) {
         Intent intent = new Intent(this, SelectChar.class);
+        intent.putExtra("previousExp", ExpStore.getPreviousExp());
         startActivity(intent);
         finish();
     }
-    
+
+
+
     /**
      * 기록 버튼 클릭 시 호출되는 메소드 → GameActivity를 시작하고 현재의 MainActivity를 종료하는 동작 수행
      */
