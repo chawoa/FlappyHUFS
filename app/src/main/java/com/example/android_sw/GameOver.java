@@ -11,7 +11,8 @@ import android.widget.TextView;
 public class GameOver extends AppCompatActivity {
     Button mRestartButton; // Button 타입 변수 선언
     TextView tScore,tBest; // TextView 타입 변수 선언
-
+    static int scoreCount;
+    
     /**
      * 1. 액티비티 초기화
      * 2. 컨텐트 뷰를 'activity_game_over.xml' 레이아웃 파일로 설정 (게임 종료 UI 정의)
@@ -21,7 +22,7 @@ public class GameOver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over); // 액티비티 레이아웃을 activity_game_over로 설정
         mRestartButton = findViewById(R.id.btnRestart); // btnRestart를 아이디로 가지는 버튼 지정 변수
-        int scoreCount = getIntent().getExtras().getInt("score"); // 메인 액티비티에서 전달된 score(정수 데이터) 저장 변수
+        scoreCount = getIntent().getExtras().getInt("score"); // 메인 액티비티에서 전달된 score(정수 데이터) 저장 변수
 
         ScoreCheck.updateBestScore(this, scoreCount); // 최고 점수 업데이트
 

@@ -1,20 +1,23 @@
 package com.example.android_sw;
 
-import android.widget.ProgressBar;
-
 public class ExpStore {
-    public static void updateExpBar(ProgressBar expBar, int score) {
-        // 점수에 따른 경험치 계산 로직
-        int exp = calculateExp(score);
+    private static int totalExp = 0;
 
-        // 경험치 바 업데이트
-        expBar.setProgress(exp);
+    public static int getTotalExp() {
+        return totalExp;
     }
 
-    private static int calculateExp(int score) {
+    public static void addExp(int exp) {
+        totalExp += exp;
+    }
+
+    public static float calculateExpPercentage(int maxExp) {
         // 경험치 계산 로직 구현
-        // 예시: 점수가 0 ~ 100 사이이면 점수를 경험치로 사용
-        return Math.min(score, 100);
+        // 예시로 현재 점수를 50이라고 가정하여 경험치 비율을 계산합니다.
+        int currentScore = GameOver.scoreCount;
+        float expPercentage = ((float) currentScore / maxExp) * 100;
+
+        return expPercentage;
     }
 }
 
