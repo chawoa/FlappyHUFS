@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 전체 화면 모드로 변경
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        
         // 상태 표시줄 숨기기
         getSupportActionBar().hide();
 
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*
-    StartGame 버튼 클릭 시 호출되는 메소드 → GameActivity를 시작하고 현재의 MainActivity를 종료하는 동작 수행
+    /**
+     * StartGame 버튼 클릭 시 호출되는 메소드 → GameActivity를 시작하고 현재의 MainActivity를 종료하는 동작 수행
      */
     public void startGame(View view){
         Intent intent = new Intent(this, GameActivity.class);
@@ -61,12 +62,18 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * 캐릭터 선택 버튼 클릭 시 호출되는 메소드 → GameActivity를 시작하고 현재의 MainActivity를 종료하는 동작 수행
+     */
     public void startCharacter(View view) {
         Intent intent = new Intent(this, SelectChar.class);
         startActivity(intent);
         finish();
     }
-
+    
+    /**
+     * 기록 버튼 클릭 시 호출되는 메소드 → GameActivity를 시작하고 현재의 MainActivity를 종료하는 동작 수행
+     */
     public void scoreCheck(View view) {
         Intent intent = new Intent(this, ScoreCheck.class);
         startActivity(intent);

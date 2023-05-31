@@ -8,7 +8,7 @@
     <color name="colorYellow">#ff0</color>
     <color name="myColor">#103050</color>
     <color name="colorWhite">#fff</color>
-
+    <color name="progress_green">#4CAF50</color>
 
 
 </resources>

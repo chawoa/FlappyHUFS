@@ -54,10 +54,21 @@
         </TableRow>
     </TableLayout>
 
+    <ProgressBar
+        android:id="@+id/expBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/Table1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progressDrawable="@drawable/custom_progress_bar" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Table1"
+        android:layout_below="@id/expBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:fontFamily="@font/fontwan"
@@ -66,6 +77,5 @@
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:onClick="BackToMain"/>
-
 
 </RelativeLayout>
