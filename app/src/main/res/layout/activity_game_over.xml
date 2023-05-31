@@ -11,8 +11,7 @@
     <RelativeLayout
         android:id="@+id/relative_1"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="100dp">
+        android:layout_height="250dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/gameOver"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
             android:background="@drawable/btn_gradient_style"
             android:fontFamily="@font/fonta"
             android:text="재시작"
