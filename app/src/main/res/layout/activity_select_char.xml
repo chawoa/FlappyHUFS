@@ -60,9 +60,9 @@
         android:layout_below="@id/Table1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:fontFamily="@font/fonta"
+        android:fontFamily="@font/fontwan"
         android:background="@drawable/btn_gradient_style"
-        android:text="BACK"
+        android:text="메인화면"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:onClick="BackToMain"/>
