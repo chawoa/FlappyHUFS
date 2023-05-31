@@ -1,23 +1,23 @@
 package com.example.android_sw;
 
 public class ExpStore {
-    private static int totalExp = 0;
+    private static int previousExp = 0; // 기존 점수 저장 변수
 
-    public static int getTotalExp() {
-        return totalExp;
+    public static void setPreviousExp(int exp) {
+        previousExp = exp; // 이전 경험치 값을 직접 설정
     }
 
-    public static void addExp(int exp) {
-        totalExp += exp;
+    public static int getPreviousExp() {
+        return previousExp;
+    }
+
+    public static int addExp(int exp) {
+        previousExp += exp;
+        return previousExp;
     }
 
     public static float calculateExpPercentage(int maxExp) {
-        // 경험치 계산 로직 구현
-        // 예시로 현재 점수를 50이라고 가정하여 경험치 비율을 계산합니다.
-        int currentScore = GameOver.scoreCount;
-        float expPercentage = ((float) currentScore / maxExp) * 100;
-
+        float expPercentage = ((float) getPreviousExp() / maxExp) * 100;
         return expPercentage;
     }
 }
-
