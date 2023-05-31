@@ -23,8 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/topScoresDisplay"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
         android:onClick="BackToMain"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_gradient_style"
+        android:fontFamily="@font/fonta"
+        android:textSize="24sp"
         android:text="메인화면" />
 
 </RelativeLayout>

@@ -25,7 +25,7 @@ public class ScoreCheck extends AppCompatActivity {
 
         topScoresDisplay = findViewById(R.id.topScoresDisplay);
 
-        StringBuilder scores = new StringBuilder("Top Scores:\n\n");
+        StringBuilder scores = new StringBuilder("Top Scores:\n");
         SharedPreferences pref = getSharedPreferences("myStoragePreference", 0);
 
         for (int i = 1; i <= 5; i++) {
