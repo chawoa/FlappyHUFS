@@ -1,5 +1,7 @@
 package com.example.android_sw;
 
+import static com.example.android_sw.ExpStore.LV;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.content.res.Resources;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar;
@@ -33,6 +36,7 @@ public class SelectChar extends AppCompatActivity {
 
         // 경험치 바 업데이트
         updateExpBar();
+        updateLevel();
     }
 
     private void updateExpBar() {
@@ -121,5 +125,11 @@ public class SelectChar extends AppCompatActivity {
     }
     public static Bitmap Image_Two(){
         return SwimChar[2];
+    }
+
+    public void updateLevel(){
+        TextView nowLevel = findViewById(R.id.nowlevel);
+        String nlevel = "Lv." + LV;
+        nowLevel.setText(nlevel);
     }
 }

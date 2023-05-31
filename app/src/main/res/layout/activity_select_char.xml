@@ -77,5 +77,14 @@
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:onClick="BackToMain"/>
+    <TextView
+        android:id="@+id/nowlevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fonta"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_below="@id/expBar"
+        android:background="@drawable/btn_gradient_style"/>
 
 </RelativeLayout>
