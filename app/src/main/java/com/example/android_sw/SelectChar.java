@@ -39,8 +39,6 @@ public class SelectChar extends AppCompatActivity {
         // expBar 초기화
         expBar = findViewById(R.id.expBar);
 
-        // 최대 경험치 값 설정
-        maxExp = 100; // 예시로 100으로 설정, 실제로 사용하는 최대 경험치 값을 설정해야 합니다.
 
         // 경험치 바 업데이트
         updateExpBar();
