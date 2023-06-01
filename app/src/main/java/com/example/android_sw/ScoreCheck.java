@@ -22,6 +22,7 @@ public class ScoreCheck extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ExpStore.assign(this.getApplicationContext());
         setContentView(R.layout.activity_score_check);
 
         // 전체 화면 모드로 변경
