@@ -19,6 +19,7 @@ public class GameOver extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
+        ExpStore.assign(this.getApplicationContext());
         mRestartButton = findViewById(R.id.btnRestart);
         scoreCount = getIntent().getExtras().getInt("score");
 
