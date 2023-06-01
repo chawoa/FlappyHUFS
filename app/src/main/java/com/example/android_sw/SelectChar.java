@@ -5,10 +5,12 @@ import static com.example.android_sw.ExpStore.getPreviousExp;
 
 import androidx.appcompat.app.AppCompatActivity; // 앱의 활동(Activity) 표현 클래스
 
+import android.app.Dialog;
 import android.content.Intent; // 앱 구성 요소 간 통신 클래스
 import android.os.Bundle; // 데이터 키-값 쌍의 형태로 저장 및 전달 클래스
 import android.view.View; // 사용자 인터페이스 클래스
 import android.view.WindowManager; // 앱의 창(window) 관리 클래스
+import android.widget.Button;
 import android.widget.ImageButton; // 이미지 표시 버튼을 표현하는 안드로이드 UI 요소
 import android.graphics.Bitmap; // 비트맵 이미지 표현하는 안드로이드 그래픽스 클래스
 import android.graphics.BitmapFactory; // 비트맵 이미지 디코딩하는 유틸리티 클래스
@@ -19,6 +21,8 @@ import android.widget.TextView; // 텍스트 표현 클래스
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar; // 경험치 바 객체 초기화
     public static int maxExp = 200; // 최대 경험치 값
+    public boolean Lv2EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
+    public boolean Lv3EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,7 @@ public class SelectChar extends AppCompatActivity {
         // 경험치 바 & 레벨 업데이트
         updateExpBar();
         updateLevel();
+        unlockChar();
     }
 
     private void updateExpBar() {
@@ -62,6 +67,18 @@ public class SelectChar extends AppCompatActivity {
     public static boolean Glasses_selected; // 수경 쓴 캐릭터 boolean 값
     public static boolean Others_selected; // ... 캐릭터 boolean 값
     public static Bitmap[] SwimChar = new Bitmap[3]; // 캐릭터 저장 할 임시 배열
+
+    public void unlockChar() { // selectchar에서 사용 (oncreate에 한다?)
+        if (LV >= 2 && (Lv2EventChecker == false)) {
+            Lv2EventChecker = true;
+
+        }
+
+        if (LV >= 3 && (Lv3EventChecker == false)) {
+            Lv3EventChecker = true;
+        }
+    }
+
     public void CheckChar(View view) { // 캐릭터 클릭 시 캐릭터들의 각 boolean 값들을 변경해주는 함수
         ImageButton clickedButton = (ImageButton) view;
 
@@ -71,13 +88,55 @@ public class SelectChar extends AppCompatActivity {
             Glasses_selected = false;
             Others_selected = false;
         } else if (clickedButton.getId() == R.id.Char_2) {
-            Basic_selected = false;
-            Glasses_selected = true;
-            Others_selected = false;
+            if(Lv2EventChecker) {
+                Basic_selected = false;
+                Glasses_selected = true;
+                Others_selected = false;
+            }else{
+                ImageButton Char2 = (ImageButton) findViewById(R.id.Char_2);
+                Char2.setOnClickListener(v -> {
+                    Dialog dialog = new Dialog(SelectChar.this);
+                    dialog.setContentView(R.layout.custom_dialog_layout);
+
+                    TextView messageTextView = dialog.findViewById(R.id.dialog_message);
+                    messageTextView.setText("Lv.2 to Unlock");
+
+                    Button cancelButton = dialog.findViewById(R.id.dialog_cancel_button);
+                    cancelButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                });
+            }
         } else if (clickedButton.getId() == R.id.Char_3) {
-            Basic_selected = false;
-            Glasses_selected = false;
-            Others_selected = true;
+            if(Lv3EventChecker) {
+                Basic_selected = false;
+                Glasses_selected = false;
+                Others_selected = true;
+            }else{
+                ImageButton Char3 = (ImageButton) findViewById(R.id.Char_3);
+                Char3.setOnClickListener(v -> {
+                    Dialog dialog = new Dialog(SelectChar.this);
+                    dialog.setContentView(R.layout.custom_dialog_layout);
+
+                    TextView messageTextView = dialog.findViewById(R.id.dialog_message);
+                    messageTextView.setText("Lv.3 to Unlock");
+
+                    Button cancelButton = dialog.findViewById(R.id.dialog_cancel_button);
+                    cancelButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                });
+            }
         }
 
         updateChecking();
