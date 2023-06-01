@@ -7,7 +7,7 @@ public class ExpStore {
     public static int LV = 1;
     private static int MAXLV = 3;
 
-    private static int MaxDefault = 100;
+    private static int MaxDefault = 200;
     private static final String PREF_NAME = "expStorePreference";
     private static final String KEY_PREVIOUS_EXP = "previousExp";
     private static SharedPreferences sharedPreferences;
@@ -39,7 +39,7 @@ public class ExpStore {
     }
 
     public static int checkLVup(int Maxmax) {
-        if(LV < MAXLV){ // 최대 레벨보다 작은 경우
+        if(LV < MAXLV) { // 최대 레벨보다 작은 경우
             int previousExp = getPreviousExp();
             if (previousExp >= Maxmax) {
                 LV++; // 레벨업
@@ -48,10 +48,10 @@ public class ExpStore {
                 Maxmax = LV * MaxDefault;
             }
 
-            if (previousExp >= Maxmax) {
+            if (previousExp >= Maxmax) { // 최대 레벨 초과나 달성 시에는 변화 X
                 checkLVup(Maxmax);
             }
-        } // 최대 레벨 초과나 달성 시에는 변화 X
+        }
         return Maxmax;
-    } // 여기까지
+    }
 }
