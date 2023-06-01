@@ -19,12 +19,12 @@
         android:textSize="70sp"></TextView>
 
     <ImageView
+        android:id="@+id/mainChar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textV"
         android:layout_marginTop="80dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/student_1"></ImageView>
+        android:layout_centerHorizontal="true"></ImageView>
 
     <ImageButton
         android:id="@+id/imageButton"

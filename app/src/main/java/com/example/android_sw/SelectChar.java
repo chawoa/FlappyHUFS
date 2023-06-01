@@ -62,7 +62,6 @@ public class SelectChar extends AppCompatActivity {
     public static boolean Glasses_selected; // 수경 쓴 캐릭터 boolean 값
     public static boolean Others_selected; // ... 캐릭터 boolean 값
     public static Bitmap[] SwimChar = new Bitmap[3]; // 캐릭터 저장 할 임시 배열
-
     public void CheckChar(View view) { // 캐릭터 클릭 시 캐릭터들의 각 boolean 값들을 변경해주는 함수
         ImageButton clickedButton = (ImageButton) view;
 

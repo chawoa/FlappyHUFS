@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity; // 앱의 활동(Activity) 표�
 
 import android.content.DialogInterface; // 다이얼로그 상호작용에 대한 콜백 메서드 정의 인터페이스
 import android.content.Intent; // 앱 구성 요소 간 통신 클래스
+import android.graphics.Bitmap;
 import android.os.Bundle; // 데이터 키-값 쌍의 형태로 저장 및 전달 클래스
 import android.view.View; // 사용자 인터페이스 클래스
 import android.view.WindowManager; // 앱의 창(window) 관리 클래스
 import android.widget.Button; // 앱의 버튼 클래스
+import android.widget.ImageView;
 
 /**
  * 1. 부모 클래스의 onCreate() 메소드 호출
@@ -53,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
             alert.setTitle("종료 알림창");
             alert.show();
         });
+
+        updateMainChar();
+    }
+
+    public void updateMainChar(){
+        ImageView mainchar = findViewById(R.id.mainChar);
+        Bitmap currchar = SelectChar.Image_Zero();
+        mainchar.setImageBitmap(currchar);
     }
 
     /**
