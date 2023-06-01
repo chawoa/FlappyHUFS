@@ -1,6 +1,7 @@
 package com.example.android_sw;
 
 import static com.example.android_sw.ExpStore.LV;
+import static com.example.android_sw.ExpStore.getPreviousExp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +17,7 @@ import android.widget.TextView;
 
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar;
-    private int maxExp = 100; // 최대 경험치 값
+    public static int maxExp = 100; // 최대 경험치 값
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +130,7 @@ public class SelectChar extends AppCompatActivity {
 
     public void updateLevel(){
         TextView nowLevel = findViewById(R.id.nowlevel);
-        String nlevel = "Lv." + LV;
+        String nlevel = "Lv." + LV + "(" + getPreviousExp() + "/" + maxExp + ")";
         nowLevel.setText(nlevel);
     }
 }

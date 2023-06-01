@@ -80,11 +80,13 @@
     <TextView
         android:id="@+id/nowlevel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:fontFamily="@font/fonta"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:layout_below="@id/expBar"
-        android:background="@drawable/btn_gradient_style"/>
+        android:textSize="20sp"
+        android:layout_below="@id/Table1"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
