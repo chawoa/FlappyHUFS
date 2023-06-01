@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,6 +25,12 @@ public class SelectChar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_char);
         updateChecking();
+
+        // 전체 화면 모드로 변경
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // 상태 표시줄 숨기기
+        getSupportActionBar().hide();
 
         // 이전 경험치 값 초기화
         int previousExp = getIntent().getIntExtra("previousExp", 0);
