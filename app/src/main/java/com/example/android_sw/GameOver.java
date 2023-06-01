@@ -30,6 +30,7 @@ public class GameOver extends AppCompatActivity { // 게임 오버 액티비티
 
         // 이전 경험치에 점수를 누적시킴
         ExpStore.addExp(scoreCount);
+        SelectChar.maxExp = ExpStore.checkLVup(SelectChar.maxExp);
 
         ScoreCheck.updateBestScore(this, scoreCount);
 

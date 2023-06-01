@@ -48,7 +48,7 @@ public class SelectChar extends AppCompatActivity {
         float expPercentage = ExpStore.calculateExpPercentage(maxExp);
         int progress = Math.round(expPercentage);
 
-        expBar.setMax(maxExp); // 최대 경험치 설정
+        expBar.setMax(100); // 최대 경험치 설정
         expBar.setProgress(progress); // 현재 경험치 설정 (백분율)
     }
 
