@@ -2,16 +2,15 @@ package com.example.android_sw;
 
 import androidx.appcompat.app.AppCompatActivity; // 액션바 기능을 사용하는 액티비티를 위한 기본 클래스
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.TextView;
+import android.content.Intent; // 앱 구성 요소 간 통신 클래스
+import android.os.Bundle; // 데이터 키-값 쌍의 형태로 저장 및 전달 클래스
+import android.view.View; // 사용자 인터페이스 클래스
+import android.view.WindowManager; // 앱의 창(window) 관리 클래스
+import android.widget.Button; // 앱의 버튼 클래스
+import android.widget.TextView; // 텍스트 표현 클래스
 
-
-public class GameOver extends AppCompatActivity {
-    Button mRestartButton;
+public class GameOver extends AppCompatActivity { // 게임 오버 액티비티
+    Button mRestartButton; // 메인 화면으로 돌아가는 버튼
     TextView tScore, tBest;
     static int scoreCount;
 
@@ -20,8 +19,8 @@ public class GameOver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
         ExpStore.assign(this.getApplicationContext());
-        mRestartButton = findViewById(R.id.btnRestart);
-        scoreCount = getIntent().getExtras().getInt("score");
+        mRestartButton = findViewById(R.id.btnRestart); // 메인 화면으로 돌아가는 버튼과 연결
+        scoreCount = getIntent().getExtras().getInt("score"); // 현 점수 인텐트를 받아 변수에 저장
 
         // 전체 화면 모드로 변경
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);

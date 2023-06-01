@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/potrait_background">
+    android:background="@drawable/potrait_background"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/topScoresDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="@color/black"
         android:fontFamily="@font/fonta"
+        android:textColor="@color/black"
         android:textSize="36sp" />
 
     <Button
@@ -22,11 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/topScoresDisplay"
         android:layout_centerHorizontal="true"
-        android:onClick="BackToMain"
-        android:textColor="@color/black"
         android:background="@drawable/btn_gradient_style"
         android:fontFamily="@font/fontwan"
+        android:text="메인화면"
+        android:textColor="@color/black"
         android:textSize="24sp"
-        android:text="메인화면" />
+        android:onClick="BackToMain"/>
 
 </RelativeLayout>

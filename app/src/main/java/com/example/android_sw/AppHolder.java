@@ -30,9 +30,9 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
 
     }
 
-    public static SoundPlayer getSoundPlay(){
+    public static SoundPlayer getSoundPlay(){ // 게임 내 효과음 게터 메소드
         return soundPlay;
-    } // 게임 내 효과음 게터 메소드
+    }
 
 
     public static void holdGameVariables() { // 게임에 사용되는 상수 변수 생성자 (AppHolder 클래스 객체 내부 변수)
@@ -46,21 +46,21 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
         AppHolder.obstacleDistance = AppHolder.SCRN_WIDTH_X * 2 / 3;
     }
 
-    public static BitmapControl getBitmapControl(){
+    public static BitmapControl getBitmapControl() { // 비트맵 제어 변수 게터 메소드
         return bitmapControl;
-    } // 비트맵 제어 변수 게터 메소드
-    public static GameManager getGameManager(){
+    }
+    public static GameManager getGameManager() { // 게임 관리 객체 게터 메소드
         return gameManager;
-    } // 게임 관리 객체 게터 메소드
+    }
 
     private static void mapScreenSize(Context context) { // 화면 크기 설정 생성자
         WindowManager manager = (WindowManager) context.getSystemService(context.WINDOW_SERVICE); // 윈도우 관리자를 가져와 manager라는 변수에 저장
         Display dsp = manager.getDefaultDisplay(); // 기본 디스플레이 호출 후 dsp라는 Display 객체 반환
         DisplayMetrics dMetrics = new DisplayMetrics(); // DisplayMatrics 객체인 dMetrics 반환
         dsp.getMetrics(dMetrics); // dMetrics 호출 후 해당 정보를 dsp 객체에 저장
-        int width = dMetrics.widthPixels; // 화면의 너비
-        int height = dMetrics.heightPixels; // 화면의 높이
-        AppHolder.SCRN_WIDTH_X = width;
-        AppHolder.SCRN_HEIGHT_Y = height;
+        int width = dMetrics.widthPixels; // 화면의 너비 데이터
+        int height = dMetrics.heightPixels; // 화면의 높이 데이터
+        AppHolder.SCRN_WIDTH_X = width; // 위의 width 변수의 데이터를 화면 너비로 사용
+        AppHolder.SCRN_HEIGHT_Y = height; // 위의 height 변수의 데이터를 화면 높이로 사용
     }
 }

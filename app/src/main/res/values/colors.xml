@@ -2,13 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="colorGray">#808080</color>
     <color name="colorRed">#ffcb0013</color>
     <color name="colorYellow">#ff0</color>
     <color name="myColor">#103050</color>
     <color name="colorWhite">#fff</color>
     <color name="progress_green">#4CAF50</color>
-
-
 </resources>

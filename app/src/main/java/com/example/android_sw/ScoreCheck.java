@@ -1,19 +1,14 @@
 package com.example.android_sw;
 
-import android.content.Context;
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity; // 앱의 활동(Activity) 표현 클래스
 
-/**
- * 안드로이드에서 데이터 영구 저장 및 검색 기능 제공 → 키-값 쌍으로 데이터 저장 및 다른 구성 요소 간 데이터 공유 가능
- * 주로 사용자 설정, 게임 점수, 애플리케이션 상태 등의 저장에 사용
- */
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context; // 앱의 현재 상태와 관련된 정보 제공 패키지
+import android.content.Intent; // 앱 구성 요소 간 통신 클래스
+import android.content.SharedPreferences; // 데이터 영구 저장 및 검색 기능 제공
+import android.os.Bundle; // 데이터 키-값 쌍의 형태로 저장 및 전달 클래스
+import android.view.View; // 사용자 인터페이스 클래스
+import android.view.WindowManager; // 앱의 창(window) 관리 클래스
+import android.widget.TextView; // 텍스트 표현 클래스
 
 public class ScoreCheck extends AppCompatActivity {
 

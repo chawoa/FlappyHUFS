@@ -11,6 +11,7 @@ public class MainThread extends Thread {
     long WAIT = 31;
     boolean Running;
     private static Canvas canvas;
+
     public MainThread(SurfaceHolder surfaceHolder) {
         this.mySurfaceHolder = surfaceHolder;
         Running = true;
@@ -71,6 +72,6 @@ public class MainThread extends Thread {
     }
 
     public void setIsRunning(boolean state) { // 작동 여부를 부여하는 세터 메소드
-        Running = state;
-    } // 실행 여부 저장 변수 (불린)
+        Running = state; // 실행 여부 저장 변수 (불린)
+    }
 }

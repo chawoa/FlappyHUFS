@@ -2,7 +2,7 @@ package com.example.android_sw;
 
 import java.util.Random;
 
-public class ObstacleCollection {
+public class ObstacleCollection { // 장애물의 설정값 저장 클래스
     private int xObstacle; // 장애물 X 좌표
     private int upObstacleCollection_Y; // 상단 장애물의 Y좌표
     private Random rand; // 난수 설정 변수

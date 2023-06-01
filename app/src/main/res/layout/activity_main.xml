@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/potrait_background">
+    android:background="@drawable/potrait_background"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/fonta"
         android:text="FLAPPY HUFS"
-        android:layout_marginTop="60dp"
         android:textColor="@color/black"
         android:textSize="70sp"></TextView>
 
@@ -22,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textV"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/student_1"></ImageView>
 
     <ImageButton
@@ -43,10 +43,10 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_gradient_style"
         android:fontFamily="@font/fontwan"
-        android:onClick="scoreCheck"
         android:text="기록"
         android:textColor="@color/black"
-        android:textSize="30sp"></Button>
+        android:textSize="30sp"
+        android:onClick="scoreCheck"></Button>
 
     <Button
         android:id="@+id/exitBtn"
@@ -70,9 +70,9 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/btn_gradient_style"
         android:fontFamily="@font/fontwan"
-        android:onClick="startCharacter"
         android:text="캐릭터 선택"
         android:textColor="@color/black"
-        android:textSize="30sp"></Button>
+        android:textSize="30sp"
+        android:onClick="selectCharacter"></Button>
 
 </RelativeLayout>

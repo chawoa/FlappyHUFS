@@ -19,7 +19,8 @@ public class GameManager {
     int scoreCount; // 점수 저장 변수
     int winningObstacle; // 통과한 장애물 변수
     Paint designPaint; 
-    public GameManager() {
+
+    public GameManager() { // GameManager 클래스 생성자
         bgImage = new BgImage();
         swimmingChar = new SwimmingChar();
         gameState = 0;
@@ -27,10 +28,9 @@ public class GameManager {
         rand = new Random();
         generateObstacleObject();
         initScoreVariables();
-
     }
 
-    public void initScoreVariables() {
+    public void initScoreVariables() { // 시작 점수에 대한 생성자
         scoreCount = 0;
         winningObstacle = 0;
         designPaint = new Paint();
@@ -47,7 +47,7 @@ public class GameManager {
      * gameState == 2 : 게임 오버
     */
 
-    public void generateObstacleObject() {
+    public void generateObstacleObject() { // 장애물 생성자
         for (int j = 0; j < AppHolder.obstacleGap; j++) {
             int obstacleX = AppHolder.SCRN_WIDTH_X + j*AppHolder.obstacleDistance;
             int upObstacleCollectionY = AppHolder.minimumObstacleCollection_Y;
@@ -81,7 +81,7 @@ public class GameManager {
             }
           
             if (obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() - AppHolder.getBitmapControl().getObstacleWidth()) {
-                scoreCount ++;
+                scoreCount++;
                 winningObstacle ++;
                 AppHolder.getSoundPlay().playPing();
                 if (winningObstacle > AppHolder.obstacle_numbers - 1) {
@@ -139,7 +139,7 @@ public class GameManager {
     /**
      * <배경 애니메이션 처리 메소드>
      *     1. 배경의 X 좌표를 업데이트하여 배경 스크롤링
-     *     2. 배경 그리기\
+     *     2. 배경 그리기
      *     3. 배경이 화면을 벗어나면 반대 쪽에 다시 그려 연속 스크롤링 효과 구현
      */
     public void backgroundAnimation(Canvas canvas) {

@@ -11,37 +11,37 @@
         android:id="@+id/textC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
         android:fontFamily="@font/fonta"
         android:text="CHARACTER"
         android:textColor="@color/black"
-        android:textSize="40sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"></TextView>
+        android:textSize="40sp"></TextView>
 
     <TableLayout
         android:id="@+id/Table1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/textC"
-        android:layout_marginTop="180dp">
+        android:layout_marginTop="180dp"
+        android:layout_centerHorizontal="true">
 
         <TableRow>
 
             <ImageButton
                 android:id="@+id/Char_1"
+                android:src="@drawable/student_1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/student_1"
                 android:onClick="CheckChar"/>
 
             <ImageButton
                 android:id="@+id/Char_2"
+                android:src="@drawable/student_2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/student_2"
                 android:onClick="CheckChar"/>
 
             <ImageButton
@@ -57,13 +57,25 @@
     <ProgressBar
         android:id="@+id/expBar"
         style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/custom_progress_bar"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@id/Table1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:max="100"
-        android:progressDrawable="@drawable/custom_progress_bar" />
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/nowlevel"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/Table1"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/fonta"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -71,22 +83,11 @@
         android:layout_below="@id/expBar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:fontFamily="@font/fontwan"
         android:background="@drawable/btn_gradient_style"
+        android:fontFamily="@font/fontwan"
         android:text="메인화면"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:onClick="BackToMain"/>
-    <TextView
-        android:id="@+id/nowlevel"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:fontFamily="@font/fonta"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_below="@id/Table1"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

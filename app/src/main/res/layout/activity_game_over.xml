@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameOver"
-    android:background="@drawable/potrait_background">
+    android:background="@drawable/potrait_background"
+    tools:context=".GameOver">
 
     <RelativeLayout
         android:id="@+id/relative_1"
@@ -15,55 +15,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginTop="90dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="90dp">
+        android:orientation="horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_marginTop="20dp">
+            android:padding="10dp">
             <TextView
                 android:id="@+id/BestDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/fonta"
                 android:text="7"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:fontFamily="@font/fonta"></TextView>
+                android:textSize="30sp"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/fonta"
                 android:text="BEST"
                 android:textSize="30sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/fonta"></TextView>
+                android:textColor="@color/black"></TextView>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_marginTop="20dp">
+            android:padding="10dp">
             <TextView
                 android:id="@+id/scoreDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/fonta"
                 android:text="7"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:fontFamily="@font/fonta"></TextView>
+                android:textSize="30sp"></TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/fonta"
                 android:text="SCORE"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:fontFamily="@font/fonta"></TextView>
+                android:textSize="30sp"></TextView>
 
         </LinearLayout>
     </LinearLayout>
@@ -80,10 +80,10 @@
             android:id="@+id/gameOver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/fonta"
             android:text="GAME OVER"
             android:textSize="50sp"
-            android:fontFamily="@font/fonta"
-            android:layout_centerHorizontal="true"
             android:textColor="@color/black"></TextView>
 
         <Button
