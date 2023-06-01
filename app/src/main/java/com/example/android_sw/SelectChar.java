@@ -18,7 +18,7 @@ import android.widget.TextView; // 텍스트 표현 클래스
 
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar; // 경험치 바 객체 초기화
-    public static int maxExp = 100; // 최대 경험치 값
+    public static int maxExp = 200; // 최대 경험치 값
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,9 +102,9 @@ public class SelectChar extends AppCompatActivity {
             SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
             SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
         } else if (Glasses_selected) {
-            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
-            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
-            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
+            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student2_1);
+            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student2_2);
+            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student2_3);
         } else if (Others_selected) {
             SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
             SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);

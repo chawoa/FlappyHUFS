@@ -19,10 +19,10 @@ public class BitmapControl { // res 파일의 리소스를 객체화 시켜주�
         SwimmingChar[0] = SelectChar.Image_Zero(); // 첫번째 이미지 설정
         SwimmingChar[1] = SelectChar.Image_One(); // 두번째 이미지 설정
         SwimmingChar[2] = SelectChar.Image_Two(); // 세번째 이미지 설정
-        upObstacle = BitmapFactory.decodeResource(res, R.drawable.up_tube); // 상단 장애물 리소스 복호화
-        downObstacle = BitmapFactory.decodeResource(res, R.drawable.down_tube); // 하단 장애물 리소스 복호화
-        upColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.colored_tube_up); // 상단 채색된 장애물 복호화
-        downColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.colored_tube_bottom); // 하단 채색된 장애물 복호화
+        upObstacle = BitmapFactory.decodeResource(res, R.drawable.tree); // 상단 장애물 리소스 복호화
+        downObstacle = BitmapFactory.decodeResource(res, R.drawable.bus1); // 하단 장애물 리소스 복호화
+        upColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.statue); // 상단 채색된 장애물 복호화
+        downColoredObstacle = BitmapFactory.decodeResource(res,R.drawable.bus2); // 하단 채색된 장애물 복호화
     }
     public Bitmap getUpColoredObstacle(){
         return upColoredObstacle;
