@@ -43,11 +43,11 @@ public class MainThread extends Thread {
             }
 
             /**
-             * 1. unlockCanvasAndPost() 호출 → canvas를 다른 스레드가 접근 가능해짐 (그려진 그래픽이 실제 화면에 표시됨)
-             * 즉, canvas를 사용하는 다른 부분이나 스레드에서 사용할 수 있도록 해주는 역할
-
-             * 2. 잠금 상태로 유지 → 다른 스레드가 접근 불가능 (동시에 여러 그래픽 작업 충돌 혹은 동기화 문제 발생 가능)
+             * 1. 잠금 상태로 유지 → 다른 스레드가 접근 불가능 (동시에 여러 그래픽 작업 충돌 혹은 동기화 문제 발생 가능)
              * 따라서 작업이 끝나면 unlockCanvasAndPost() 호출을 통해 필히 해제해야 함
+
+             * 2. unlockCanvasAndPost() 호출 → canvas를 다른 스레드가 접근 가능해짐 (해제 → 그려진 그래픽이 실제 화면에 표시됨)
+             * 즉, canvas를 사용하는 다른 부분이나 스레드에서 사용할 수 있도록 해주는 역할
              */
             finally {
                 if (canvas != null) {
