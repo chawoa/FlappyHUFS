@@ -1,13 +1,13 @@
 package com.example.android_sw;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
+import android.content.Context; // 앱의 현재 상태와 관련된 정보 제공 패키지
+import android.view.MotionEvent; // 화면에서의 터치, 제스처 등 동작 이벤트 클래스
+import android.view.SurfaceHolder; // 서피스에 대한 액세스, 제어를 제공하는 콜백 인터페이스
+import android.view.SurfaceView; // 별도 스레드에서 그림을 그리기 위한 전용 그리기 표면 제공 뷰
 
-import androidx.annotation.NonNull;
+import androidx.annotation.NonNull; // 해당 요소가 null 값을 허용하지 않음을 나타내는 주석
 
-public class GamePlay extends SurfaceView implements SurfaceHolder.Callback { //
+public class GamePlay extends SurfaceView implements SurfaceHolder.Callback {
     MainThread mainThread; // MainThread 타입 변수
     public GamePlay(Context context) {
         super(context); // Context의 부모 클래스 상속

@@ -1,7 +1,7 @@
 package com.example.android_sw;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Context; // 앱의 현재 상태와 관련된 정보 제공 패키지
+import android.content.SharedPreferences; // 데이터 영구 저장 및 검색 기능 제공
 
 public class ExpStore {
     public static int LV = 1;

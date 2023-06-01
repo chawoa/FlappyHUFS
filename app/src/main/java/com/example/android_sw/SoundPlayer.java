@@ -1,6 +1,6 @@
 package com.example.android_sw;
 
-import android.content.Context;
+import android.content.Context; // 앱의 현재 상태와 관련된 정보 제공 패키지
 import android.media.MediaPlayer;
 
 public class SoundPlayer { // 게임 내 효과음 클래스

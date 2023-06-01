@@ -1,22 +1,16 @@
 package com.example.android_sw;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.res.Resources; // 앱 리소스 접근 클래스
+import android.graphics.Bitmap; // 비트맵 이미지 표현하는 안드로이드 그래픽스 클래스
+import android.graphics.BitmapFactory; // 비트맵 이미지 디코딩하는 유틸리티 클래스
 
-public class BitmapControl {
-    /*
-    res 파일의 리소스를 객체화 시켜주는 생성자
-     */
+public class BitmapControl { // res 파일의 리소스를 객체화 시켜주는 생성자
     Bitmap background; // 배경 객체
     Bitmap[] SwimmingChar; // 캐릭터 수영 모션 저장 배열
     Bitmap upObstacle, downObstacle; // 상단, 하단 장애물 객체
     Bitmap upColoredObstacle, downColoredObstacle; // 상단, 하단 다른 색 장애물 객체
 
-    /*
-    res 파일의 리소스를 객체화 시켜주는 생성자
-     */
-    public BitmapControl(Resources res) {
+    public BitmapControl(Resources res) { // res 파일의 리소스를 객체화 시켜주는 생성자
         background = BitmapFactory.decodeResource(res, R.drawable.background); // 배경화면으로 사용할 리소스 복호화
         background = imageScale(background); // 배경화면의 스케일
         SelectChar selectChar = new SelectChar(); // SelectChar의 함수들을 사용하기 위한 선언
