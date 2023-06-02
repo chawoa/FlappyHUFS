@@ -20,7 +20,7 @@ import android.widget.TextView; // 텍스트 표현 클래스
 
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar; // 경험치 바 객체 초기화
-    public static int maxExp = 10; // 최대 경험치 값
+    public static int maxExp = 200; // 최대 경험치 값
     public static boolean Lv2EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
     public static boolean Lv3EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
 
