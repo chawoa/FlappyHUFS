@@ -20,9 +20,9 @@ import android.widget.TextView; // 텍스트 표현 클래스
 
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar; // 경험치 바 객체 초기화
-    public static int maxExp = 200; // 최대 경험치 값
-    public boolean Lv2EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
-    public boolean Lv3EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
+    public static int maxExp = 10; // 최대 경험치 값
+    public static boolean Lv2EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
+    public static boolean Lv3EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,24 +93,7 @@ public class SelectChar extends AppCompatActivity {
                 Glasses_selected = true;
                 Others_selected = false;
             }else{
-                ImageButton Char2 = (ImageButton) findViewById(R.id.Char_2);
-                Char2.setOnClickListener(v -> {
-                    Dialog dialog = new Dialog(SelectChar.this);
-                    dialog.setContentView(R.layout.custom_dialog_layout);
-
-                    TextView messageTextView = dialog.findViewById(R.id.dialog_message);
-                    messageTextView.setText("Lv.2 to Unlock");
-
-                    Button cancelButton = dialog.findViewById(R.id.dialog_cancel_button);
-                    cancelButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog.dismiss();
-                        }
-                    });
-
-                    dialog.show();
-                });
+                showUnlockMessage("Lv.2 to Unlock");
             }
         } else if (clickedButton.getId() == R.id.Char_3) {
             if(Lv3EventChecker) {
@@ -118,29 +101,30 @@ public class SelectChar extends AppCompatActivity {
                 Glasses_selected = false;
                 Others_selected = true;
             }else{
-                ImageButton Char3 = (ImageButton) findViewById(R.id.Char_3);
-                Char3.setOnClickListener(v -> {
-                    Dialog dialog = new Dialog(SelectChar.this);
-                    dialog.setContentView(R.layout.custom_dialog_layout);
-
-                    TextView messageTextView = dialog.findViewById(R.id.dialog_message);
-                    messageTextView.setText("Lv.3 to Unlock");
-
-                    Button cancelButton = dialog.findViewById(R.id.dialog_cancel_button);
-                    cancelButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog.dismiss();
-                        }
-                    });
-
-                    dialog.show();
-                });
+                showUnlockMessage("Lv.3 to Unlock");
             }
         }
 
         updateChecking();
         Checker(getResources());
+    }
+
+    private void showUnlockMessage(String message) {
+        Dialog dialog = new Dialog(SelectChar.this);
+        dialog.setContentView(R.layout.custom_dialog_layout);
+
+        TextView messageTextView = dialog.findViewById(R.id.dialog_message);
+        messageTextView.setText(message);
+
+        Button cancelButton = dialog.findViewById(R.id.dialog_cancel_button);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     private void updateChecking() { // 선택시 체크 표시를 하는 함수
