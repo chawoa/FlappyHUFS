@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         updateMainChar();
     }
 
-    public void updateMainChar(){
+    public void updateMainChar() {
         ImageView mainchar = findViewById(R.id.mainChar);
         Bitmap currchar = SelectChar.Image_Zero();
         mainchar.setImageBitmap(currchar);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * StartGame 버튼 클릭 시 호출되는 메소드 → GameActivity를 시작하고 현재의 MainActivity를 종료하는 동작 수행
      */
-    public void startGame(View view){
+    public void startGame(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
         finish();
