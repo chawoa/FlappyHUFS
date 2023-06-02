@@ -68,7 +68,7 @@ public class SelectChar extends AppCompatActivity {
     public static boolean Others_selected; // ... 캐릭터 boolean 값
     public static Bitmap[] SwimChar = new Bitmap[3]; // 캐릭터 저장 할 임시 배열
 
-    public void unlockChar() { // selectchar에서 사용 (oncreate에 한다?)
+    public void unlockChar() {
         if (LV >= 2 && (Lv2EventChecker == false)) {
             Lv2EventChecker = true;
 
