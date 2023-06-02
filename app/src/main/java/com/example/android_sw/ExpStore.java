@@ -6,7 +6,6 @@ import android.content.SharedPreferences; // 데이터 영구 저장 및 검색 
 public class ExpStore {
     public static int LV = 1;
     private static int MAXLV = 3;
-
     private static int MaxDefault = 200;
     private static final String PREF_NAME = "expStorePreference";
     private static final String KEY_PREVIOUS_EXP = "previousExp";
