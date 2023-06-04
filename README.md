@@ -1,4 +1,4 @@
-# <span style="font-style: italic;"> Flappy HUFS: 졸업 논문을 되찾아라! </span>
+# Flappy HUFS: 졸업 논문을 되찾아라!
 **저희는 폭우로 인하여 침수된 학교 입구로부터 졸업 논문을 가져오기 위해 목숨을 건 한국 외대 학생의 잠수 여정을 게임으로 표현하고자 했습니다!**
 
 <스토리 라인>
@@ -6,10 +6,9 @@
 2. 당일 엄청난 폭우로 인해 학교 입구로부터 공학관까지 침수
 3. 폭우가 멈추지 않아 공학관까지 잠길 수 있어 무조건 가지러 가야 하는 상황
 4. 결국 주인공은 잠수하여 공학관까지 다녀오기로 결심함
-
 ---
-# <span style="font-style: italic;"> 팀명: Code Divers </span>
-**게임 컨셉인 잠수 (<span style="color: skyblue;"> Dive </span>) 와 많은 코드 (<span style="color: skyblue;"> Code </span>) 속에서 해결을 위해 헤엄쳐나가는 팀원들의 모습을 담아 잠수부 (<span style="color: skyblue;"> Divers </span>)라는 단어로부터 착안하였습니다!**
+# 팀명: Code Divers
+**게임 컨셉인 잠수 (Dive) 와 많은 코드 (Code) 속에서 해결을 위해 헤엄쳐나가는 팀원들의 모습을 담아 잠수부 (Divers)라는 단어로부터 착안하였습니다!**
 
 ## <구성원 및 역할>
 
@@ -21,11 +20,12 @@
 |박철의|`발표 및 기획`|발표 자료 제작 및 앱 개발 플로우 기획|
 |탁성재|`디자인`|앱 아이콘, 캐릭터, 장애물, 배경화면 제작
 
-# <span style="font-style: italic;"> 개발 동기 </span>
+# 개발 동기
 
-**"<span style="color: green; font-style: italic;">게임을 만든 다면 더욱 실력을 향상 시킬 수 있는 기회입니다.</span>" - <span style="font-style: italic;">박상원 교수님</span>**
+***"게임을 만든 다면 더욱 실력을 향상 시킬 수 있는 기회입니다." - 박상원 교수님***
 
-**→ 주어진 기간 내에 <span style="color: red;">작품 완성 및 개인의 실력 향상을 도모</span>하기 위해 어려운 주제임에도 최선을 다하고자 게임 개발을 선택했습니다.**
-## 플로우 차트
+**→ 주어진 기간 내에 작품 완성 및 개인의 실력 향상을 도모하기 위해 어려운 주제임에도 최선을 다하고자 게임 개발을 선택했습니다.**
+
+# 플로우 차트
 
 ![플로우차트](/flowchart/FlappyHUFS.jpg)
