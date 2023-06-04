@@ -21,8 +21,8 @@ import android.widget.TextView; // 텍스트 표현 클래스
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar; // 경험치 바 객체 초기화
     public static int maxExp = 200; // 최대 경험치 값
-    public static boolean Lv2EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
-    public static boolean Lv3EventChecker = false; // 이미 풀렸는지 확인을 위한 불린 값
+    public static boolean Lv2EventChecker = false; // 2레벨 해금 되었는지 확인을 위한 불린 값
+    public static boolean Lv3EventChecker = false; // 3레벨 해금 되었는지 확인을 위한 불린 값
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +43,13 @@ public class SelectChar extends AppCompatActivity {
         // expBar 초기화
         expBar = findViewById(R.id.expBar);
 
-        // 경험치 바 & 레벨 업데이트
+        // 경험치 바 & 레벨 & 캐릭터 해금 업데이트
         updateExpBar();
         updateLevel();
         unlockChar();
     }
 
-    private void updateExpBar() {
+    private void updateExpBar() { // 경험치 백분율 단위로 업데이트 (경험치 바 표현을 위한 함수)
         float expPercentage = ExpStore.calculateExpPercentage(maxExp);
         int progress = Math.round(expPercentage);
 
@@ -68,13 +68,13 @@ public class SelectChar extends AppCompatActivity {
     public static boolean Others_selected; // ... 캐릭터 boolean 값
     public static Bitmap[] SwimChar = new Bitmap[3]; // 캐릭터 저장 할 임시 배열
 
-    public void unlockChar() {
-        if (LV >= 2 && (Lv2EventChecker == false)) {
+    public void unlockChar() { // 캐릭터 해금 여부 결정 메소드
+        if (LV >= 2 && (Lv2EventChecker == false)) { // 2레벨 달성 시 해금
             Lv2EventChecker = true;
 
         }
 
-        if (LV >= 3 && (Lv3EventChecker == false)) {
+        if (LV >= 3 && (Lv3EventChecker == false)) { // 3레벨 달성 시 해금
             Lv3EventChecker = true;
         }
     }
