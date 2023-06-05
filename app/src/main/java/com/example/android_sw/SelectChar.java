@@ -133,8 +133,8 @@ public class SelectChar extends AppCompatActivity {
         ImageButton button2 = findViewById(R.id.Char_2);
         ImageButton button3 = findViewById(R.id.Char_3);
 
-        button1.setImageResource(Basic_selected ? R.drawable.checking_img : R.drawable.student_1);
-        button2.setImageResource(Glasses_selected ? R.drawable.checking_img : R.drawable.student_2);
+        button1.setImageResource(Basic_selected ? R.drawable.student_1checking : R.drawable.student_1);
+        button2.setImageResource(Glasses_selected ? R.drawable.student2_1checking : R.drawable.student2_1);
         button3.setImageResource(Others_selected ? R.drawable.checking_img : R.drawable.student_3);
     }
 

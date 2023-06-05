@@ -30,7 +30,6 @@
 
             <ImageButton
                 android:id="@+id/Char_1"
-                android:src="@drawable/student_1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@android:color/transparent"
@@ -38,7 +37,6 @@
 
             <ImageButton
                 android:id="@+id/Char_2"
-                android:src="@drawable/student_2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@android:color/transparent"
@@ -46,7 +44,6 @@
 
             <ImageButton
                 android:id="@+id/Char_3"
-                android:src="@drawable/student_3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@android:color/transparent"
