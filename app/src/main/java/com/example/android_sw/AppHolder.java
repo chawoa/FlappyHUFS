@@ -38,12 +38,12 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
     public static void holdGameVariables() { // 게임에 사용되는 상수 변수 생성자 (AppHolder 클래스 객체 내부 변수)
         AppHolder.gravityPull = 5;
         AppHolder.JUMP_VELOCITY = -50;
-        AppHolder.obstacleGap = 650;
+        AppHolder.obstacleGap = 700;
         AppHolder.obstacle_numbers = 2;
         AppHolder.obstacleVelocity = 24;
         AppHolder.minimumObstacleCollection_Y = (int)(AppHolder.obstacleGap / 2.0);
         AppHolder.maximumObstacleCollection_Y = AppHolder.SCRN_HEIGHT_Y - AppHolder.minimumObstacleCollection_Y - AppHolder.obstacleGap;
-        AppHolder.obstacleDistance = AppHolder.SCRN_WIDTH_X * 7 / 8;
+        AppHolder.obstacleDistance = AppHolder.SCRN_WIDTH_X * 5 / 6;
     }
 
     public static BitmapControl getBitmapControl() { // 비트맵 제어 변수 게터 메소드
