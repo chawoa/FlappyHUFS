@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import android.app.Activity; // 앱의 화면을 나타내는 컴포넌트 → UI와 상호작용 & LifeCycle 관리
 import android.content.Context; // 앱의 현재 상태와 관련된 정보 제공 패키지

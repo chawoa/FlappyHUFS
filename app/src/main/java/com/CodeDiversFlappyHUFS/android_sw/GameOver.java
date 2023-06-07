@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import androidx.appcompat.app.AppCompatActivity; // 액션바 기능을 사용하는 액티비티를 위한 기본 클래스
 
@@ -8,6 +8,8 @@ import android.view.View; // 사용자 인터페이스 클래스
 import android.view.WindowManager; // 앱의 창(window) 관리 클래스
 import android.widget.Button; // 앱의 버튼 클래스
 import android.widget.TextView; // 텍스트 표현 클래스
+
+import com.example.android_sw.R;
 
 public class GameOver extends AppCompatActivity { // 게임 오버 액티비티
     Button mRestartButton; // 메인 화면으로 돌아가는 버튼

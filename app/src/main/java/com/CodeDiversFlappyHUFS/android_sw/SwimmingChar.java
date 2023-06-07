@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 public class SwimmingChar {
     private int charX; // 캐릭터 X좌표

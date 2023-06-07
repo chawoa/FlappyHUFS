@@ -1,7 +1,4 @@
-package com.example.android_sw;
-
-import static com.example.android_sw.ExpStore.LV;
-import static com.example.android_sw.ExpStore.getPreviousExp;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import androidx.appcompat.app.AppCompatActivity; // 앱의 활동(Activity) 표현 클래스
 
@@ -17,6 +14,7 @@ import android.graphics.BitmapFactory; // 비트맵 이미지 디코딩하는 �
 import android.content.res.Resources; // 앱 리소스 접근 클래스
 import android.widget.ProgressBar; // 진행 상태를 시각적 표현하는 안드로이드 UI 요소
 import android.widget.TextView; // 텍스트 표현 클래스
+import com.example.android_sw.R;
 
 public class SelectChar extends AppCompatActivity {
     private ProgressBar expBar; // 경험치 바 객체 초기화
@@ -69,12 +67,12 @@ public class SelectChar extends AppCompatActivity {
     public static Bitmap[] SwimChar = new Bitmap[3]; // 캐릭터 저장 할 임시 배열
 
     public void unlockChar() { // 캐릭터 해금 여부 결정 메소드
-        if (LV >= 2 && (Lv2EventChecker == false)) { // 2레벨 달성 시 해금
+        if (ExpStore.LV >= 2 && (Lv2EventChecker == false)) { // 2레벨 달성 시 해금
             Lv2EventChecker = true;
 
         }
 
-        if (LV >= 3 && (Lv3EventChecker == false)) { // 3레벨 달성 시 해금
+        if (ExpStore.LV >= 3 && (Lv3EventChecker == false)) { // 3레벨 달성 시 해금
             Lv3EventChecker = true;
         }
     }
@@ -172,7 +170,7 @@ public class SelectChar extends AppCompatActivity {
 
     public void updateLevel() {
         TextView nowLevel = findViewById(R.id.nowlevel);
-        String nlevel = "Lv." + LV + "(" + getPreviousExp() + "/" + maxExp + ")";
+        String nlevel = "Lv." + ExpStore.LV + "(" + ExpStore.getPreviousExp() + "/" + maxExp + ")";
         nowLevel.setText(nlevel);
     }
 }

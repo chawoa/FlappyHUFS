@@ -1,8 +1,9 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import android.content.res.Resources; // 앱 리소스 접근 클래스
 import android.graphics.Bitmap; // 비트맵 이미지 표현하는 안드로이드 그래픽스 클래스
 import android.graphics.BitmapFactory; // 비트맵 이미지 디코딩하는 유틸리티 클래스
+import com.example.android_sw.R;
 
 public class BitmapControl { // res 파일의 리소스를 객체화 시켜주는 생성자
     Bitmap background; // 배경 객체

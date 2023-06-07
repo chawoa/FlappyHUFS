@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import androidx.appcompat.app.AppCompatActivity; // 앱의 활동(Activity) 표현 클래스
 
@@ -9,6 +9,8 @@ import android.os.Bundle; // 데이터 키-값 쌍의 형태로 저장 및 전�
 import android.view.View; // 사용자 인터페이스 클래스
 import android.view.WindowManager; // 앱의 창(window) 관리 클래스
 import android.widget.TextView; // 텍스트 표현 클래스
+
+import com.example.android_sw.R;
 
 public class ScoreCheck extends AppCompatActivity {
 

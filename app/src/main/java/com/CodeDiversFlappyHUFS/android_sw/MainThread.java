@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import android.graphics.Canvas;
 import android.os.SystemClock;

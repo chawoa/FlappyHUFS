@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import androidx.appcompat.app.AlertDialog; // 대화상자(dialog) 표현 클래스
 import androidx.appcompat.app.AppCompatActivity; // 앱의 활동(Activity) 표현 클래스
@@ -11,6 +11,8 @@ import android.view.View; // 사용자 인터페이스 클래스
 import android.view.WindowManager; // 앱의 창(window) 관리 클래스
 import android.widget.Button; // 앱의 버튼 클래스
 import android.widget.ImageView;
+
+import com.example.android_sw.R;
 
 /**
  * 1. 부모 클래스의 onCreate() 메소드 호출

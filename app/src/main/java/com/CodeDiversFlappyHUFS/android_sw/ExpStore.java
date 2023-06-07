@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import android.content.Context; // 앱의 현재 상태와 관련된 정보 제공 패키지
 import android.content.SharedPreferences; // 데이터 영구 저장 및 검색 기능 제공

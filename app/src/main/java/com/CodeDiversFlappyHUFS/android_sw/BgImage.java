@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 public class BgImage { // 배경화면 생성 클래스
     private int image_X_background;

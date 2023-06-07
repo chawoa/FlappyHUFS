@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import android.app.Activity;
 import android.os.Bundle; // 데이터 키-값 쌍의 형태로 저장 및 전달 클래스

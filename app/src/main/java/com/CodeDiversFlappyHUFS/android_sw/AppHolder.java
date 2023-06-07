@@ -1,4 +1,4 @@
-package com.example.android_sw;
+package com.CodeDiversFlappyHUFS.android_sw;
 
 import android.content.Context; // 앱의 현재 상태와 관련된 정보를 제공하는데 사용하는 패키지
 import android.util.DisplayMetrics; // 디바이스의 디스플레이 메트릭스 정보를 사용하기 위한 패키지 (화면 크기, 해상도, DPI)
