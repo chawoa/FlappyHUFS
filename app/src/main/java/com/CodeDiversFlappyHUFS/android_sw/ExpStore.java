@@ -47,9 +47,12 @@ public class ExpStore {
                 Maxmax = LV * MaxDefault;
             }
 
-            if (previousExp >= Maxmax) { // 최대 레벨 초과나 달성 시에는 변화 X
+            if (previousExp >= Maxmax) {
                 checkLVup(Maxmax);
             }
+        }if(LV >= MAXLV){ // 최대레벨 초과나 달성 시에는 넘어가지 않도록
+            int maxExp = MaxDefault * LV;
+            setPreviousExp(maxExp);
         }
         return Maxmax;
     }

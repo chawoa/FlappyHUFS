@@ -133,7 +133,7 @@ public class SelectChar extends AppCompatActivity {
 
         button1.setImageResource(Basic_selected ? R.drawable.student_1checking : R.drawable.student_1);
         button2.setImageResource(Glasses_selected ? R.drawable.student2_1checking : R.drawable.student2_1);
-        button3.setImageResource(Others_selected ? R.drawable.checking_img : R.drawable.student_3);
+        button3.setImageResource(Others_selected ? R.drawable.student3_1checking : R.drawable.student3_1);
     }
 
     // boolean 값에 따른 캐릭터 변경하는 함수
@@ -147,9 +147,9 @@ public class SelectChar extends AppCompatActivity {
             SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student2_2);
             SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student2_3);
         } else if (Others_selected) {
-            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
-            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
-            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student_3);
+            SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student3_1);
+            SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student3_2);
+            SwimChar[2] = BitmapFactory.decodeResource(res, R.drawable.student3_3);
         } else {
             SwimChar[0] = BitmapFactory.decodeResource(res, R.drawable.student_1);
             SwimChar[1] = BitmapFactory.decodeResource(res, R.drawable.student_2);
