@@ -67,7 +67,8 @@ public class GameManager {
      */
     public void scrollingObstacle(Canvas can) {
         if (gameState == 1) {
-            if ((obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX() + AppHolder.getBitmapControl().getCharWidth())
+            if ((obstacleCollections.get(winningObstacle).getXObstacle() < swimmingChar.getX()
+                    + AppHolder.getBitmapControl().getCharWidth())
             && (obstacleCollections.get(winningObstacle).getUpObstacleCollection_Y() > swimmingChar.getY()
             || obstacleCollections.get(winningObstacle).getDownObstacle_Y() < swimmingChar.getY() +
                     AppHolder.getBitmapControl().getCharHeight())) {

@@ -21,7 +21,7 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
     static Context gameActivityContext; // 게임 화면에 보이는 텍스트 객체
     static SoundPlayer soundPlay; // 캐릭터 효과음 클래스 객체
 
-    public static void assign(Context context) { // 앱에 필요한 정보를 불러오는 생성자
+    public static void assign(Context context) { // 앱에 필요한 정보를 불러오는 메소드
         mapScreenSize(context);
         bitmapControl = new BitmapControl(context.getResources());
         holdGameVariables();
