@@ -27,7 +27,6 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
         holdGameVariables();
         gameManager = new GameManager();
         soundPlay = new SoundPlayer(context);
-
     }
 
     public static SoundPlayer getSoundPlay(){ // 게임 내 효과음 게터 메소드
@@ -53,7 +52,7 @@ public class AppHolder { // 앱 실행을 위한 주요 정보 제공 클래스
         return gameManager;
     }
 
-    private static void mapScreenSize(Context context) { // 화면 크기 설정 생성자
+    private static void mapScreenSize(Context context) { // 화면 크기 설정 메소드
         WindowManager manager = (WindowManager) context.getSystemService(context.WINDOW_SERVICE); // 윈도우 관리자를 가져와 manager라는 변수에 저장
         Display dsp = manager.getDefaultDisplay(); // 기본 디스플레이 호출 후 dsp라는 Display 객체 반환
         DisplayMetrics dMetrics = new DisplayMetrics(); // DisplayMatrics 객체인 dMetrics 반환
