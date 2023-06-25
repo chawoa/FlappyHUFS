@@ -90,15 +90,15 @@ public class SelectChar extends AppCompatActivity {
                 Basic_selected = false;
                 Glasses_selected = true;
                 Others_selected = false;
-            }else{
+            } else {
                 showUnlockMessage("Lv.2 to Unlock");
             }
         } else if (clickedButton.getId() == R.id.Char_3) {
-            if(Lv3EventChecker) {
+            if (Lv3EventChecker) {
                 Basic_selected = false;
                 Glasses_selected = false;
                 Others_selected = true;
-            }else{
+            } else {
                 showUnlockMessage("Lv.3 to Unlock");
             }
         }

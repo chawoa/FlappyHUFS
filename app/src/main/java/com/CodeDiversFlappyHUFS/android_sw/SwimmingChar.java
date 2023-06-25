@@ -8,8 +8,8 @@ public class SwimmingChar {
     public static int maximumFrame; // 최대 프레임
 
     public SwimmingChar() { // 캐릭터 생성자
-        charX = AppHolder.SCRN_WIDTH_X/2 - AppHolder.getBitmapControl().getCharWidth()/2;
-        charY = AppHolder.SCRN_HEIGHT_Y/2 - AppHolder.getBitmapControl().getCharHeight()/2;
+        charX = AppHolder.SCRN_WIDTH_X / 2 - AppHolder.getBitmapControl().getCharWidth() / 2;
+        charY = AppHolder.SCRN_HEIGHT_Y / 2 - AppHolder.getBitmapControl().getCharHeight() / 2;
         currentFrame = 0;
         maximumFrame = 2;
     }

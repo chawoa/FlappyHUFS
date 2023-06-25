@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         android:fontFamily="@font/fonta"
         android:textColor="@color/black"
-        android:textSize="36sp" />
+        android:textSize="36sp"/>
 
     <Button
         android:id="@+id/btnMain"
